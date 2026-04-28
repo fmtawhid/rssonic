@@ -10,16 +10,16 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+
             $table->string('name');
+            $table->string('slug')->unique(); // ✅ NEW
+            $table->string('image')->nullable();
+
+            $table->enum('product_type', ['machine', 'raw_material'])->default('raw_material');
+
             $table->text('description')->nullable();
-            $table->decimal('buy_price', 10, 2);
-            $table->decimal('sale_price', 10, 2);
-            $table->integer('stock_quantity')->default(0);
-            $table->foreignId('supplier_id')->nullable()->constrained('suppliers')->onDelete('set null');
-            $table->foreignId('merchant_id')->nullable()->constrained('merchants')->onDelete('set null');
-            $table->string('sku')->nullable()->unique();
-            $table->string('barcode')->nullable()->unique();
             $table->boolean('is_active')->default(true);
+
             $table->timestamps();
         });
     }

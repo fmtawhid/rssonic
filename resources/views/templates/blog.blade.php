@@ -12,16 +12,20 @@
 <section>
   <div class="container">
     <div class="blog-grid">
+    @foreach ($blogs as $blog)
+    
+    
       <!-- Blog Card 1 -->
       <article class="blog-card">
         <div class="blog-image" style="background-image: url('https://picsum.photos/id/180/600/300');"></div>
         <div class="blog-content">
           <div class="blog-meta"><span class="blog-date">Apr 15, 2025</span><span class="blog-category">Silicone</span></div>
-          <h3>Advances in Silicone Printing Technology for High-Performance Textiles</h3>
+          <h3>{{ $blog->title }}</h3>
           <p>Explore the latest innovations in silicone printing that enhance wash fastness and durability. Learn how modern dispensing systems improve consistency and reduce waste in textile production.</p>
           <a href="blog-post.html?id=1" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
+    @endforeach
 
       <!-- Blog Card 2 -->
       <article class="blog-card">

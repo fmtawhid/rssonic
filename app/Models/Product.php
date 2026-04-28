@@ -3,62 +3,30 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 
 class Product extends Model
 {
-    use HasFactory;
-
     protected $fillable = [
         'name',
+        'slug',
+        'image',
+        'product_type',
         'description',
-        'buy_price',
-        'sale_price',
-        'stock_quantity',
-        'supplier_id',
-        'merchant_id',
-        'sku',
-        'barcode',
         'is_active',
     ];
 
-    protected function casts(): array
+    // Auto slug generate
+    protected static function boot()
     {
-        return [
-            'buy_price' => 'decimal:2',
-            'sale_price' => 'decimal:2',
-            'stock_quantity' => 'integer',
-            'is_active' => 'boolean',
-            'created_at' => 'datetime',
-            'updated_at' => 'datetime',
-        ];
-    }
+        parent::boot();
 
-    // Relationships
-    public function supplier()
-    {
-        return $this->belongsTo(Supplier::class);
-    }
+        static::creating(function ($product) {
+            $product->slug = Str::slug($product->name);
+        });
 
-    public function merchant()
-    {
-        return $this->belongsTo(Merchant::class);
-    }
-
-    public function sales()
-    {
-        return $this->hasMany(Sale::class);
-    }
-
-    // Accessors
-    public function getProfitAttribute()
-    {
-        return $this->sale_price - $this->buy_price;
-    }
-
-    public function getProfitMarginAttribute()
-    {
-        if ($this->buy_price == 0) return 0;
-        return (($this->sale_price - $this->buy_price) / $this->buy_price) * 100;
+        static::updating(function ($product) {
+            $product->slug = Str::slug($product->name);
+        });
     }
 }

@@ -109,14 +109,6 @@
                         </a>
                     </li>
 
-                    <!-- POS View -->
-                    <li>
-                        <a href="{{ route('admin.pos') }}"
-                            class="flex items-center p-3 rounded-lg {{ request()->routeIs('admin.pos') ? 'bg-primary-50 text-primary-700 border-l-4 border-primary-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900' }}">
-                            <i class="fas fa-cash-register mr-3"></i>
-                            POS View
-                        </a>
-                    </li>
 
                     <!-- Products -->
                     <li>
@@ -136,52 +128,33 @@
                                     Product List
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ route('admin.stock.create') }}"
-                                    class="block p-2 rounded text-gray-600 hover:bg-gray-100 {{ request()->routeIs('admin.stock.create') ? 'bg-primary-50 text-primary-700' : '' }}">
-                                    Stock Add
-                                </a>
-                            </li>
+                          
                         </ul>
                     </li>
-
-                  
-
-                    <!-- People -->
+                    <!-- Products -->
                     <li>
                         <div class="p-3 text-gray-500 uppercase text-xs font-semibold">
-                            People
+                            Blogs
                         </div>
                         <ul class="ml-6 space-y-1">
                             <li>
-                                <a href="{{ route('admin.customer.list') }}"
-                                    class="block p-2 rounded text-gray-600 hover:bg-gray-100 {{ request()->routeIs('admin.customer.list') ? 'bg-primary-50 text-primary-700' : '' }}">
-                                    Customer
+                                <a href="{{ route('admin.blogs.create') }}"
+                                    class="block p-2 rounded text-gray-600 hover:bg-gray-100 {{ request()->routeIs('admin.blogs.create') ? 'bg-primary-50 text-primary-700' : '' }}">
+                                    Add Blog
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('admin.supplier.list') }}"
-                                    class="block p-2 rounded text-gray-600 hover:bg-gray-100 {{ request()->routeIs('admin.supplier.list') ? 'bg-primary-50 text-primary-700' : '' }}">
-                                    Supplier
+                                <a href="{{ route('admin.blogs.index') }}"
+                                    class="block p-2 rounded text-gray-600 hover:bg-gray-100 {{ request()->routeIs('admin.blogs.index') ? 'bg-primary-50 text-primary-700' : '' }}">
+                                    Blog List
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ route('admin.merchant.list') }}"
-                                    class="block p-2 rounded text-gray-600 hover:bg-gray-100 {{ request()->routeIs('admin.merchant.list') ? 'bg-primary-50 text-primary-700' : '' }}">
-                                    Saller
-                                </a>
-                            </li>
+                          
                         </ul>
                     </li>
 
-                    <!-- Reports -->
-                    <li>
-                        <a href="{{ route('admin.reports.index') }}"
-                            class="flex items-center p-3 rounded-lg {{ request()->routeIs('admin.reports.index', 'admin.reports.sales', 'admin.reports.products', 'admin.reports.merchants') ? 'bg-primary-50 text-primary-700 border-l-4 border-primary-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900' }}">
-                            <i class="fas fa-chart-bar mr-3"></i>
-                            Reports
-                        </a>
-                    </li>
+
+                
                 </ul>
             </nav>
 

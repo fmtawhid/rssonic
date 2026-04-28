@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Blog;
+
 
 use Illuminate\Http\Request;
 
@@ -24,7 +26,8 @@ class PageController extends Controller
     }
     public function blog()
     {
-        return view('templates.blog');
+        $blogs = Blog::all();
+        return view('templates.blog', compact('blogs'));
     }
     public function blogDetails()
     {

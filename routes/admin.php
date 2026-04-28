@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\MerchantsController;
 use App\Http\Controllers\Admin\ProjectsController;
 use App\Http\Controllers\Admin\TasksController;
-use App\Http\Controllers\Admin\PosController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SaleController;
 use App\Http\Controllers\Admin\StockController;
@@ -21,7 +21,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/', [AdminController::class, 'index'])->name('index');
 
     // POS View
-    Route::get('/pos', [PosController::class, 'index'])->name('pos');
+    Route::resource('blogs', BlogController::class);
 
     // Products Routes
     Route::resource('products', ProductController::class, [
