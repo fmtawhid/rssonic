@@ -1,7 +1,7 @@
 @extends('admin.layout.layout')
 
 @section('content')
-<main class="p-6">
+<main class="flex-1 overflow-y-auto p-4 md:p-6">
 
     <div class="flex justify-between items-center mb-6">
         <h1 class="text-2xl font-bold">Products</h1>

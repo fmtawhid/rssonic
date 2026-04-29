@@ -69,54 +69,18 @@
     <div class="section-label">Premium industrial range</div>
     <h2 class="section-title">Machinery & <span>Material Solutions</span></h2>
     <div class="products-grid">
+      @forelse ($products as $product)
       <div class="product-card">
-        <img class="product-img" src="https://picsum.photos/id/0/500/200" alt="Silicone printing machine">
+        <img class="product-img" src="https://picsum.photos/id/{{ rand(0, 200) }}/500/200" alt="{{ $product->name }}">
         <div class="product-info">
-          <h3>Silicone Printing Systems</h3>
-          <p>High-performance silicone inks & dispensing machines for textile & emblem printing.</p>
-          <a href="#contact" class="btn-circle-small" style="margin-top: 12px;"><i class="fas fa-arrow-right"></i> View Details</a>
+          <h3>{{ $product->name }}</h3>
+          <p>{{ Str::limit($product->description, 80) }}</p>
+          <a href="{{ route('product-details', $product->slug) }}" class="btn-circle-small" style="margin-top: 12px;"><i class="fas fa-arrow-right"></i> View Details</a>
         </div>
       </div>
-      <div class="product-card">
-        <img class="product-img" src="https://picsum.photos/id/20/500/200" alt="TPU heat transfer film">
-        <div class="product-info">
-          <h3>TPU Logos & Heat Transfer</h3>
-          <p>Precision TPU films & 3D heat transfer emblems for garments & footwear.</p>
-          <a href="#contact" class="btn-circle-small" style="margin-top: 12px;"><i class="fas fa-arrow-right"></i> View Details</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <img class="product-img" src="https://picsum.photos/id/101/500/200" alt="PVC rubber patches">
-        <div class="product-info">
-          <h3>PVC Rubber Patches & 3D Emblems</h3>
-          <p>Custom 3D PVC patches & molded emblems for premium branding applications.</p>
-          <a href="#contact" class="btn-circle-small" style="margin-top: 12px;"><i class="fas fa-arrow-right"></i> View Details</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <img class="product-img" src="https://picsum.photos/id/132/500/200" alt="Industrial chemicals">
-        <div class="product-info">
-          <h3>Printing Chemicals</h3>
-          <p>Industrial-grade catalysts & auxiliaries for consistent high-quality output.</p>
-          <a href="#contact" class="btn-circle-small" style="margin-top: 12px;"><i class="fas fa-arrow-right"></i> View Details</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <img class="product-img" src="https://picsum.photos/id/42/500/200" alt="Dispensing & molding machine">
-        <div class="product-info">
-          <h3>Production Machinery</h3>
-          <p>Automatic dispensing systems & mold presses for emblem manufacturing.</p>
-          <a href="#contact" class="btn-circle-small" style="margin-top: 12px;"><i class="fas fa-arrow-right"></i> View Details</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <img class="product-img" src="https://picsum.photos/id/96/500/200" alt="Precision machine parts">
-        <div class="product-info">
-          <h3>Machine Accessories</h3>
-          <p>Precision components including valves, sensors & cylinders for maintenance.</p>
-          <a href="#contact" class="btn-circle-small" style="margin-top: 12px;"><i class="fas fa-arrow-right"></i> View Details</a>
-        </div>
-      </div>
+      @empty
+      <p style="text-align: center; padding: 40px;">No products available.</p>
+      @endforelse
     </div>
     <div style="text-align: center; margin-top: 40px;">
       <a href="#contact" class="btn-circle btn-primary"><i class="fas fa-phone-alt"></i> Contact our expert</a>
@@ -173,36 +137,22 @@
     <div class="section-label">Latest insights</div>
     <h2 class="section-title">Industry News & <span>Expert Articles</span></h2>
     <div class="blog-grid">
+      @forelse ($blogs as $blog)
       <article class="blog-card">
-        <div class="blog-image" style="background-image: url('https://picsum.photos/id/180/600/250');"></div>
+        <div class="blog-image" style="background-image: url('https://picsum.photos/id/{{ rand(180, 190) }}/600/250');"></div>
         <div class="blog-content">
-          <div class="blog-meta"><span class="blog-date">Apr 15, 2025</span><span class="blog-category">Silicone</span></div>
-          <h3>Silicone Printing Technology Advances</h3>
-          <p>Explore innovations in silicone printing for high-performance textiles. Learn how modern dispensing systems improve consistency.</p>
-          <a href="blog.html?post=silicone-advances" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          <div class="blog-meta"><span class="blog-category">{{ $blog->category_id == 1 ? 'Manufacturing' : ($blog->category_id == 2 ? 'Standards' : 'Industry') }}</span></div>
+          <h3>{{ $blog->title }}</h3>
+          <p>{{ Str::limit($blog->excerpt, 100) }}</p>
+          <a href="{{ route('blog-details', $blog->slug) }}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
-      <article class="blog-card">
-        <div class="blog-image" style="background-image: url('https://picsum.photos/id/181/600/250');"></div>
-        <div class="blog-content">
-          <div class="blog-meta"><span class="blog-date">Apr 10, 2025</span><span class="blog-category">Materials</span></div>
-          <h3>TPU vs PVC: Choosing the Right Material</h3>
-          <p>A comprehensive guide comparing TPU and PVC materials for logos. Understand durability, flexibility, cost and environmental factors.</p>
-          <a href="blog.html?post=tpu-vs-pvc" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </article>
-      <article class="blog-card">
-        <div class="blog-image" style="background-image: url('https://picsum.photos/id/182/600/250');"></div>
-        <div class="blog-content">
-          <div class="blog-meta"><span class="blog-date">Apr 5, 2025</span><span class="blog-category">Production</span></div>
-          <h3>Emblem Manufacturing Best Practices</h3>
-          <p>Discover best practices for setting up efficient production lines. From equipment selection to quality control for maximum output.</p>
-          <a href="blog.html?post=production-optimization" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </article>
+      @empty
+      <p style="text-align: center; padding: 40px;">No blog articles available.</p>
+      @endforelse
     </div>
     <div style="text-align: center; margin-top: 40px;">
-      <a href="blog.html" class="btn-circle btn-primary">View All Articles <i class="fas fa-arrow-right"></i></a>
+      <a href="{{ route('blog') }}" class="btn-circle btn-primary">View All Articles <i class="fas fa-arrow-right"></i></a>
     </div>
   </div>
 </section>

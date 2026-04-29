@@ -16,6 +16,13 @@ class Product extends Model
         'is_active',
     ];
 
+    public function attributes()
+    {
+        return $this->belongsToMany(Attribute::class, 'product_attributes')
+                    ->withPivot('value')
+                    ->withTimestamps();
+    }
+
     // Auto slug generate
     protected static function boot()
     {

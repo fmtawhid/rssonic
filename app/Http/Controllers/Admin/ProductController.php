@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Attribute;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -46,7 +47,24 @@ class ProductController extends Controller
             $data['image'] = $filename;
         }
 
-        Product::create($data);
+        $product = Product::create($data);
+
+        // Save custom attributes
+        if ($request->has('custom_attributes')) {
+            $customAttributes = $request->input('custom_attributes');
+            foreach ($customAttributes as $attr) {
+                if (!empty($attr['name']) && !empty($attr['value'])) {
+                    // Create or get attribute by name
+                    $attribute = Attribute::firstOrCreate(
+                        ['name' => $attr['name']],
+                        ['name' => $attr['name']]
+                    );
+                    
+                    // Attach to product with value
+                    $product->attributes()->attach($attribute->id, ['value' => $attr['value']]);
+                }
+            }
+        }
 
         return redirect()->route('admin.products.index')
             ->with('success', 'Product created successfully!');
@@ -85,6 +103,26 @@ class ProductController extends Controller
         }
 
         $product->update($data);
+
+        // Sync custom attributes
+        // First, detach all existing attributes
+        $product->attributes()->detach();
+        
+        if ($request->has('custom_attributes')) {
+            $customAttributes = $request->input('custom_attributes');
+            foreach ($customAttributes as $attr) {
+                if (!empty($attr['name']) && !empty($attr['value'])) {
+                    // Create or get attribute by name
+                    $attribute = Attribute::firstOrCreate(
+                        ['name' => $attr['name']],
+                        ['name' => $attr['name']]
+                    );
+                    
+                    // Attach to product with value
+                    $product->attributes()->attach($attribute->id, ['value' => $attr['value']]);
+                }
+            }
+        }
 
         return redirect()->route('admin.products.index')
             ->with('success', 'Product updated successfully!');
