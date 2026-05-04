@@ -5,54 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<!-- Primary SEO Meta Tags -->
+<!-- SEO Meta Tags -->
 <title>{{ $seoTitle ?? 'RS Emblem | Advanced Materials & Machinery – Bangladesh' }}</title>
-<meta name="description" content="{{ $seoDescription ?? 'RS Emblem offers advanced printing materials, high-performance polymers, TPU heat transfer systems, and industrial machinery solutions for Bangladesh and globally. Expert sourcing with local warehouse support.' }}">
-<meta name="keywords" content="{{ $seoKeywords ?? 'industrial materials, machinery solutions, printing materials, polymers, TPU heat transfer, Bangladesh manufacturer' }}">
-<meta name="author" content="RS Emblem">
-<meta name="language" content="English">
-
-<!-- Canonical URL -->
+<meta name="description" content="{{ $seoDescription ?? 'RS Emblem offers advanced printing materials, high-performance polymers, TPU heat transfer systems, and industrial machinery solutions for Bangladesh and globally.' }}">
+<meta name="keywords" content="{{ $seoKeywords ?? 'industrial materials, machinery solutions, printing materials, polymers, TPU heat transfer, Bangladesh' }}">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="{{ url()->current() }}">
 
-<!-- Open Graph Meta Tags (Social Media) -->
-<meta property="og:type" content="{{ $ogType ?? 'website' }}">
-<meta property="og:title" content="{{ $ogTitle ?? 'RS Emblem | Advanced Materials & Machinery' }}">
-<meta property="og:description" content="{{ $ogDescription ?? 'Premium industrial materials and machinery solutions from Bangladesh to the world.' }}">
+<!-- Open Graph Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ $seoTitle ?? 'RS Emblem | Advanced Materials & Machinery' }}">
+<meta property="og:description" content="{{ $seoDescription ?? 'Premium industrial materials and machinery solutions.' }}">
 <meta property="og:url" content="{{ url()->current() }}">
-<meta property="og:image" content="{{ $ogImage ?? asset('assets/og-image.jpg') }}">
+<meta property="og:image" content="{{ asset('assets/og-image.jpg') }}">
 <meta property="og:site_name" content="RS Emblem">
-<meta property="og:locale" content="en_US">
 
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ $twitterTitle ?? 'RS Emblem | Industrial Materials & Machinery' }}">
-<meta name="twitter:description" content="{{ $twitterDescription ?? 'Advanced printing materials, polymers, and industrial machinery solutions.' }}">
-<meta name="twitter:image" content="{{ $twitterImage ?? asset('assets/og-image.jpg') }}">
-
-<!-- Additional Meta Tags -->
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="theme-color" content="#F53003">
-
-<!-- Preload Critical Resources -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" as="style">
-<link rel="preload" href="{{ asset('assets/style.css') }}" as="style">
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="stylesheet" href="{{ asset('assets/style.css') }}">
+<meta name="twitter:title" content="{{ $seoTitle ?? 'RS Emblem' }}">
+<meta name="twitter:description" content="{{ $seoDescription ?? 'Advanced materials and machinery solutions.' }}">
+<meta name="twitter:image" content="{{ asset('assets/og-image.jpg') }}">
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 <link rel="apple-touch-icon" href="{{ asset('assets/apple-touch-icon.png') }}">
 
-<!-- DNS Prefetch for External Resources -->
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<!-- Fonts & Styles -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="{{ asset('assets/style.css') }}">
 
-<!-- Deferred Scripts -->
+<!-- HSTS Header (via meta tag) -->
+<meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+
+<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com" defer></script>
 </head>
 <body>
@@ -184,7 +170,7 @@
   </div>
 </div>
 
-<script src="{{ asset('assets/script.js') }}" defer></script>
+<script src="{{ asset('assets/script.js') }}"></script>
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
@@ -195,60 +181,52 @@
   gtag('config', 'G-XXXXXXXX');
 </script>
 
-<!-- Structured Data (Organization Schema) -->
+<!-- Organization Schema -->
+@verbatim
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "RS Emblem",
-  "url": "{{ url('/') }}",
-  "logo": "{{ asset('assets/logo.png') }}",
-  "description": "Advanced printing materials, high-performance polymers, TPU heat transfer systems, and industrial machinery solutions",
+  "url": "@endverbatim{{ url('/') }}@verbatim",
+  "description": "Advanced printing materials, polymers, and industrial machinery solutions",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Hazi Chan Miah Tower, Zirabo, Ashulia",
-    "addressLocality": "Savar",
-    "addressRegion": "Dhaka",
-    "postalCode": "1341",
+    "streetAddress": "Hazi Chan Miah Tower, Zirabo, Ashulia, Savar",
     "addressCountry": "BD"
   },
   "contact": {
     "@type": "ContactPoint",
     "contactType": "Sales",
-    "telephone": "+8801931669605",
-    "email": "rsemblem2022@gmail.com"
-  },
-  "sameAs": ["https://www.facebook.com/", "https://www.linkedin.com/", "https://www.instagram.com/"]
+    "telephone": "+8801931669605"
+  }
 }
 </script>
+@endverbatim
 
 <!-- Local Business Schema -->
+@verbatim
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "RS Emblem",
-  "image": "{{ asset('assets/logo.png') }}",
-  "description": "Premium industrial materials & machinery solutions",
+  "description": "Industrial materials and machinery solutions",
   "telephone": "+8801931669605",
-  "email": "rsemblem2022@gmail.com",
-  "url": "{{ url('/') }}",
+  "url": "@endverbatim{{ url('/') }}@verbatim",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Hazi Chan Miah Tower, Zirabo, Ashulia, Savar",
-    "addressLocality": "Dhaka",
-    "addressRegion": "Dhaka",
-    "postalCode": "1341",
     "addressCountry": "BD"
   },
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": "23.9000",
     "longitude": "90.2000"
-  },
-  "openingHours": "Mo-Sa 09:00-18:00",
-  "priceRange": "$$"
+  }
 }
 </script>
+@endverbatim
+
 </body>
 </html>

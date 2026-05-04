@@ -26,19 +26,6 @@
           <div class="product-info">
             <h3>{{ $product->name }}</h3>
             <p>{{ \Illuminate\Support\Str::limit($product->description, 120) }}</p>
-            
-            <!-- @if($product->attributes->count() > 0)
-              <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #e0e0e0;">
-                <p style="font-weight: 600; font-size: 12px; color: #666; margin-bottom: 8px;">Specifications:</p>
-                @foreach($product->attributes as $attribute)
-                  <div style="font-size: 11px; color: #555; margin-bottom: 4px; display: flex; justify-content: space-between;">
-                    <span><strong>{{ $attribute->name }}:</strong></span>
-                    <span>{{ $attribute->pivot->value }}</span>
-                  </div>
-                @endforeach
-              </div>
-            @endif -->
-            
             <a href="{{ route('product-details', $product->slug) }}" class="btn-circle-small" style="margin-top: 12px;"><i class="fas fa-arrow-right"></i> View Details</a>
           </div>
         </div>
