@@ -34,6 +34,8 @@
           
           <div id="contactSuccess" class="success-msg" style="background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 15px 18px; border-radius: 12px; margin-bottom: 20px; display: none; align-items: center; gap: 10px; font-size: 14px;"><i class="fas fa-check-circle"></i> <span>Thank you! We'll contact you soon.</span></div>
           
+          <div id="contactError" class="error-msg" style="background: linear-gradient(135deg, #ef4444, #dc2626); color: white; padding: 15px 18px; border-radius: 12px; margin-bottom: 20px; display: none; align-items: center; gap: 10px; font-size: 14px;"><i class="fas fa-exclamation-circle"></i> <span id="errorMessage">An error occurred</span></div>
+          
           <form id="contactForm">
             <div class="form-group" style="margin-bottom: 18px;">
               <input type="text" name="name" placeholder="Full Name *" required style="width: 100%; padding: 13px 15px; border: 2px solid #e5e7eb; border-radius: 10px; font-family: 'Roboto', sans-serif; font-size: 14px; transition: all 0.3s ease;" onfocus="this.style.borderColor='var(--primary-red)'" onblur="this.style.borderColor='#e5e7eb'">
@@ -44,16 +46,9 @@
             <div class="form-group" style="margin-bottom: 18px;">
               <input type="tel" name="phone" placeholder="Phone Number" style="width: 100%; padding: 13px 15px; border: 2px solid #e5e7eb; border-radius: 10px; font-family: 'Roboto', sans-serif; font-size: 14px; transition: all 0.3s ease;" onfocus="this.style.borderColor='var(--primary-red)'" onblur="this.style.borderColor='#e5e7eb'">
             </div>
-            <div class="form-group" style="margin-bottom: 18px;">
-              <select name="subject" style="width: 100%; padding: 13px 15px; border: 2px solid #e5e7eb; border-radius: 10px; font-family: 'Roboto', sans-serif; font-size: 14px; transition: all 0.3s ease;" onfocus="this.style.borderColor='var(--primary-red)'" onblur="this.style.borderColor='#e5e7eb'">
-                <option>Product Quote</option>
-                <option>Request Sample</option>
-                <option>Technical Support</option>
-                <option>Partnership</option>
-              </select>
-            </div>
+          
             <div class="form-group" style="margin-bottom: 25px;">
-              <textarea name="message" rows="4" placeholder="Your message..." style="width: 100%; padding: 13px 15px; border: 2px solid #e5e7eb; border-radius: 10px; font-family: 'Roboto', sans-serif; font-size: 14px; resize: none; transition: all 0.3s ease;" onfocus="this.style.borderColor='var(--primary-red)'" onblur="this.style.borderColor='#e5e7eb'"></textarea>
+              <textarea name="message" rows="4" placeholder="Your message..." required style="width: 100%; padding: 13px 15px; border: 2px solid #e5e7eb; border-radius: 10px; font-family: 'Roboto', sans-serif; font-size: 14px; resize: none; transition: all 0.3s ease;" onfocus="this.style.borderColor='var(--primary-red)'" onblur="this.style.borderColor='#e5e7eb'"></textarea>
             </div>
             <button type="submit" class="btn-circle btn-primary" style="width: 100%; padding: 14px 20px; font-size: 16px; font-weight: 700;">Send Message <i class="fas fa-paper-plane" style="margin-left: 10px;"></i></button>
           </form>
@@ -167,5 +162,76 @@
     </div>
   </div>
 </section>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const button = this.querySelector('button[type="submit"]');
+    const originalText = button.innerHTML;
+    
+    // Get CSRF token
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    
+    // Disable button and show loading state
+    button.disabled = true;
+    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    
+    console.log('Form data:', {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        message: formData.get('message')
+    });
+    
+    fetch('{{ route("contact.store") }}', {
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': csrfToken,
+            'Accept': 'application/json',
+        },
+        body: formData
+    })
+    .then(response => {
+        console.log('Response status:', response.status);
+        if (!response.ok) {
+            return response.json().then(data => {
+                throw new Error(JSON.stringify(data));
+            });
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Success response:', data);
+        if(data.success) {
+            // Show success message
+            document.getElementById('contactSuccess').style.display = 'flex';
+            document.getElementById('contactError').style.display = 'none';
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('contactSuccess').style.display = 'none';
+            }, 5000);
+        } else {
+            document.getElementById('errorMessage').textContent = data.message || 'Something went wrong';
+            document.getElementById('contactError').style.display = 'flex';
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('errorMessage').textContent = error.message;
+        document.getElementById('contactError').style.display = 'flex';
+    })
+    .finally(() => {
+        // Re-enable button
+        button.disabled = false;
+        button.innerHTML = originalText;
+    });
+});
+</script>
 
 @endsection

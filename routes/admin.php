@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\SalesmanController;
 use App\Http\Controllers\Admin\ReportController;
+use App\Http\Controllers\Admin\ContactController;
 
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
@@ -83,6 +84,14 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
         Route::get('/{id}/edit', [MerchantsController::class, 'edit'])->name('edit');
         Route::put('/{id}/update', [MerchantsController::class, 'update'])->name('update');
         Route::delete('/{id}/destroy', [MerchantsController::class, 'destroy'])->name('destroy');
+    });
+
+    // Contact CRUD
+    Route::prefix('contacts')->name('contact.')->group(function () {
+        Route::get('/', [ContactController::class, 'index'])->name('list');
+        Route::get('/{id}', [ContactController::class, 'show'])->name('show');
+        Route::delete('/{id}', [ContactController::class, 'destroy'])->name('destroy');
+        Route::post('/delete-multiple', [ContactController::class, 'destroyMultiple'])->name('delete-multiple');
     });
 });
 

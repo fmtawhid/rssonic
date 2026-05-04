@@ -13,6 +13,8 @@ class Product extends Model
         'image',
         'product_type',
         'description',
+        'meta_description',
+        'meta_keywords',
         'is_active',
     ];
 

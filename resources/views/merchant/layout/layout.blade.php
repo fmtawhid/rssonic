@@ -92,7 +92,7 @@
             <div class="p-6 border-b border-gray-200">
                 <h1 class="text-xl font-bold flex items-center text-primary-700">
                     <i class="fas fa-credit-card mr-2"></i>
-                    Pharmacy
+                    RS Sonic
                 </h1>
                 <p class="text-xs text-gray-500 mt-1">Merchant Dashboard</p>
             </div>

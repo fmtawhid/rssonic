@@ -33,10 +33,7 @@
         </div>
       </div>
       <div class="hero-image" style="background-image: url('https://picsum.photos/id/104/600/400'); background-size: cover; background-position: center; min-height: 400px; border-radius: 20px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 16px;">
-        <div style="display: flex; gap: 8px; justify-content: center;">
-          <span class="btn-circle-small" style="background: rgba(255,255,255,0.95);"><i class="fas fa-microchip"></i> German Tech</span>
-          <span class="btn-circle-small" style="background: rgba(255,255,255,0.95);"><i class="fas fa-truck"></i> Local Stock</span>
-        </div>
+        
       </div>
     </div>
   </div>

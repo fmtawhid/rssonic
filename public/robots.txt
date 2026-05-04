@@ -1,2 +1,43 @@
+# RS Emblem - robots.txt
+# Search engine crawling directives
+
+# Allow all search engines
 User-agent: *
-Disallow:
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin
+Disallow: /merchant
+Disallow: /dashboard
+Disallow: /login
+Disallow: /register
+Disallow: /api
+Disallow: /*.json$
+Disallow: /storage/
+Disallow: /vendor/
+Disallow: /bootstrap/
+Disallow: /config/
+Disallow: /database/
+Disallow: /resources/
+Disallow: /routes/
+Disallow: /tests/
+Disallow: /artisan
+
+# Allow crawling of search results
+Allow: /search
+
+# Specify crawl delay to prevent server overload
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Google-specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing-specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

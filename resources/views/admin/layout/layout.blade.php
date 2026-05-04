@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pharmacy - Admin Dashboard</title>
+    <title>RS Sonic - Admin Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -92,7 +92,7 @@
             <div class="p-6 border-b border-gray-200">
                 <h1 class="text-xl font-bold flex items-center text-primary-700">
                     <i class="fas fa-credit-card mr-2"></i>
-                    Pharmacy
+                    RS Sonic
                 </h1>
                 <p class="text-xs text-gray-500 mt-1">{{ auth()->user()->role }} dashboard</p>
             </div>
@@ -151,6 +151,13 @@
                             </li>
                           
                         </ul>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.contact.list') }}"
+                            class="flex items-center p-3 rounded-lg {{ request()->routeIs('admin.contact.list') ? 'bg-primary-50 text-primary-700 border-l-4 border-primary-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900' }}">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            Contact list
+                        </a>
                     </li>
 
 
