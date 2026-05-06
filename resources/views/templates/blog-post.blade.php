@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<div class="page-hero">
+<div class="page-hero" style="position: relative; overflow: hidden;">
   <div class="container">
     <div class="breadcrumb"><a href="{{ route('home') }}">Home</a> / <a href="{{ route('blog') }}">Blog</a> / <span>{{ $blog->title }}</span></div>
     <h1>{{ $blog->title }}</h1>
@@ -12,9 +12,9 @@
   <div class="container">
     <article class="blog-single">
       <div class="blog-header">
-        <div class="blog-meta">
+        <div class="blog-meta" style="display: flex; gap: 20px; align-items: center;">
           <span class="blog-category">{{ $blog->category_id == 1 ? 'Manufacturing' : ($blog->category_id == 2 ? 'Standards' : 'Industry') }}</span>
-          <span style="color: var(--text-muted); margin-left: 20px;">{{ $blog->views_count }} views</span>
+          <span style="color: var(--text-muted);">{{ $blog->views_count }} views</span>
         </div>
         @if($blog->image)
         <img src="{{ asset('uploads/blogs/' . $blog->image) }}" class="blog-featured-image" alt="{{ $blog->title }}">
@@ -45,12 +45,12 @@
               <div class="blog-meta">
                 <span class="blog-category">{{ $relatedBlog->category_id == 1 ? 'Manufacturing' : ($relatedBlog->category_id == 2 ? 'Standards' : 'Industry') }}</span>
               </div>
-              <h4>{{ $relatedBlog->title }}</h4>
+              <h4 style="color: var(--primary-blue);">{{ $relatedBlog->title }}</h4>
               <a href="{{ route('blog-details', $relatedBlog->slug) }}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
             </div>
           </article>
           @empty
-          <p>No related articles found.</p>
+          <p style="color: var(--text-muted);">No related articles found.</p>
           @endforelse
         </div>
       </div>

@@ -2,7 +2,7 @@
 @section('content')
 
 <!-- ✨ PREMIUM HERO SECTION -->
-<div class="page-hero" style="background: linear-gradient(135deg, var(--primary-blue) 0%, #1E2D5A 100%); position: relative; overflow: hidden; padding: 80px 0;">
+<div class="page-hero" style="position: relative; overflow: hidden;">
   <!-- Decorative circles -->
   <div style="position: absolute; top: 0; right: 0; width: 400px; height: 300px; background: rgba(217, 42, 44, 0.1); border-radius: 50%; transform: translate(100px, -100px);"></div>
   <div style="position: absolute; bottom: 0; left: 0; width: 300px; height: 300px; background: rgba(217, 42, 44, 0.08); border-radius: 50%; transform: translate(-100px, 100px);"></div>
@@ -87,7 +87,7 @@
                 <h4 style="font-size: 18px; font-weight: 700; color: var(--primary-blue); margin-bottom: 10px; margin-top: 0;">Call Us</h4>
                 <p style="color: var(--text-muted); line-height: 1.7; margin: 0; font-size: 14px;">
                   <a href="tel:+8801931669605" style="color: var(--primary-red); font-weight: 700; text-decoration: none;">+8801931669605</a><br>
-                  <span style="font-size: 13px;">Mon–Sat, 9AM – 6PM (BST)</span>
+                  <span style="font-size: 13px; color: var(--text-muted);">Mon–Sat, 9AM – 6PM (BST)</span>
                 </p>
               </div>
             </div>

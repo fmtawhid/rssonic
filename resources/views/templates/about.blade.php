@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<div class="page-hero" style="background: linear-gradient(135deg, var(--primary-blue) 0%, #1E2D5A 100%); position: relative; overflow: hidden;">
+<div class="page-hero" style="position: relative; overflow: hidden;">
   <div style="position: absolute; top: 0; right: 0; width: 400px; height: 300px; background: rgba(217, 42, 44, 0.1); border-radius: 50%; transform: translate(100px, -100px);"></div>
   <div style="position: absolute; bottom: 0; left: 0; width: 300px; height: 300px; background: rgba(217, 42, 44, 0.08); border-radius: 50%; transform: translate(-100px, 100px);"></div>
   <div class="container" style="position: relative; z-index: 2;">
@@ -138,11 +138,11 @@
     <div class="section-label">Our Journey</div>
     <h2 class="section-title">Key <span>Milestones</span></h2>
     <div class="milestone-grid" style="margin-top: 50px;">
-      <div class="milestone-card" style="border: 2px solid var(--primary-red);"><div class="milestone-number" style="background: linear-gradient(135deg, var(--primary-red), #B81F22); color: white;">2020</div><h3 style="color: var(--primary-blue); font-size: 18px;">Company Founded</h3><p style="color: var(--text-muted);">Started operations in Ashulia, Dhaka</p></div>
+      <div class="milestone-card" style="border: 2px solid var(--primary-red);"><div class="milestone-number" style=" color: white;">2020</div><h3 style="color: var(--primary-blue); font-size: 18px;">Company Founded</h3><p style="color: var(--text-muted);">Started operations in Ashulia, Dhaka</p></div>
       <div class="milestone-card" style="border-left: 4px solid var(--primary-blue); background: linear-gradient(to right, rgba(43, 58, 127, 0.05), transparent);"><div class="milestone-number" style="color: var(--primary-blue); border-color: var(--primary-blue);">2021</div><h3 style="color: var(--primary-blue); font-size: 18px;">First Warehouse</h3><p style="color: var(--text-muted);">Local stock established</p></div>
-      <div class="milestone-card" style="border: 2px solid var(--primary-red);"><div class="milestone-number" style="background: linear-gradient(135deg, var(--primary-red), #B81F22); color: white;">2022</div><h3 style="color: var(--primary-blue); font-size: 18px;">Global Partnerships</h3><p style="color: var(--text-muted);">China, Korea & Germany sourcing</p></div>
+      <div class="milestone-card" style="border: 2px solid var(--primary-red);"><div class="milestone-number" style=" color: white;">2022</div><h3 style="color: var(--primary-blue); font-size: 18px;">Global Partnerships</h3><p style="color: var(--text-muted);">China, Korea & Germany sourcing</p></div>
       <div class="milestone-card" style="border-left: 4px solid var(--primary-blue); background: linear-gradient(to right, rgba(43, 58, 127, 0.05), transparent);"><div class="milestone-number" style="color: var(--primary-blue); border-color: var(--primary-blue);">2023</div><h3 style="color: var(--primary-blue); font-size: 18px;">Machinery Division</h3><p style="color: var(--text-muted);">Full production line equipment</p></div>
-      <div class="milestone-card" style="border: 2px solid var(--primary-red);"><div class="milestone-number" style="background: linear-gradient(135deg, var(--primary-red), #B81F22); color: white;">2024</div><h3 style="color: var(--primary-blue); font-size: 18px;">500+ Clients</h3><p style="color: var(--text-muted);">Serving leading manufacturers</p></div>
+      <div class="milestone-card" style="border: 2px solid var(--primary-red);"><div class="milestone-number" style=" color: white;">2024</div><h3 style="color: var(--primary-blue); font-size: 18px;">500+ Clients</h3><p style="color: var(--text-muted);">Serving leading manufacturers</p></div>
       <div class="milestone-card" style="border-left: 4px solid var(--primary-blue); background: linear-gradient(to right, rgba(43, 58, 127, 0.05), transparent);"><div class="milestone-number" style="color: var(--primary-blue); border-color: var(--primary-blue);">2025</div><h3 style="color: var(--primary-blue); font-size: 18px;">Technical Excellence</h3><p style="color: var(--text-muted);">Expanded on-site support</p></div>
     </div>
   </div>
@@ -170,8 +170,8 @@
     <div style="position: absolute; bottom: -100px; left: -100px; width: 300px; height: 300px; background: rgba(217, 42, 44, 0.08); border-radius: 50%; pointer-events: none;"></div>
     <div class="founder-grid" style="position: relative; z-index: 2;">
       <div class="founder-card">
-        <div class="founder-avatar" style="background: linear-gradient(135deg, var(--primary-red), #B81F22); box-shadow: 0 12px 32px rgba(217, 42, 44, 0.4);">S</div>
-        <h3 style="font-size: 20px; font-weight: 800;">Md. Shafiqul Islam</h3>
+        <div class="founder-avatar" style=" box-shadow: 0 12px 32px rgba(217, 42, 44, 0.4);">S</div>
+        <h3 style="font-size: 20px; font-weight: 800;color:#fff;">Md. Shafiqul Islam</h3>
         <div class="founder-role" style="font-size: 14px;">Founder & CEO</div>
         <p style="font-size: 13px; opacity: 0.9;">RS Emblem & New Materials Technology</p>
       </div>

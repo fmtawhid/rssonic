@@ -19,13 +19,13 @@
           <div class="blog-meta">
             <span class="blog-category">{{ $blog->category_id == 1 ? 'Manufacturing' : ($blog->category_id == 2 ? 'Standards' : 'Industry') }}</span>
           </div>
-          <h3>{{ $blog->title }}</h3>
-          <p>{{ $blog->excerpt }}</p>
+          <h3 style="color: var(--primary-blue);">{{ $blog->title }}</h3>
+          <p style="color: var(--text-muted);">{{ $blog->excerpt }}</p>
           <a href="{{ route('blog-details', $blog->slug) }}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
       @empty
-      <p style="text-align: center; padding: 40px;">No blog articles available.</p>
+      <p style="text-align: center; padding: 40px; color: var(--text-muted);">No blog articles available.</p>
       @endforelse
     </div>
   </div>

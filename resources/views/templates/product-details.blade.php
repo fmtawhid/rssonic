@@ -52,10 +52,10 @@
 
         @if($product->attributes->count() > 0)
           <div class="quick-specs">
-            <h4>Technical Specifications</h4>
-            <ul>
+            <h4 style="color: var(--primary-blue);">Technical Specifications</h4>
+            <ul style="color: var(--text-muted);">
               @foreach($product->attributes as $attribute)
-                <li><i class="fas fa-check"></i> <strong>{{ $attribute->name }}:</strong> {{ $attribute->pivot->value }}</li>
+                <li><i class="fas fa-check" style="color: var(--primary-red);\"></i> <strong style="color: var(--primary-blue);">{{ $attribute->name }}:</strong> {{ $attribute->pivot->value }}</li>
               @endforeach
             </ul>
           </div>

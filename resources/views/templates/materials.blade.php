@@ -31,7 +31,7 @@
         </div>
       @empty
         <div style="grid-column: 1/-1; text-align: center; padding: 40px;">
-          <p style="color: #666; font-size: 16px;">No raw material products available at the moment.</p>
+          <p style="color: var(--text-muted); font-size: 16px;">No raw material products available at the moment.</p>
         </div>
       @endforelse
     </div>
