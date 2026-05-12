@@ -53,86 +53,112 @@
     </div>
 
 
-    <!-- 🔹 DIV 2: COMPANY INFO -->
-    <div>
+    <!-- 🔹 COMPANY INFO -->
+    <div class="mt-10">
 
-  <div style="text-align: center; margin-bottom: 30px;">
-    <h3 class="section-title" style="font-size: 26px;">Company Overview</h3>
-  </div>
+      <!-- Title -->
+      <div class="text-center mb-8">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800">
+          Company Overview
+        </h3>
+      </div>
 
-  <div style="
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  ">
+      <!-- Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
-    <div class="info-card">
-      <h4>Company Name</h4>
-      <p>RS Emblem and New Materials Technology</p>
+        <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
+          <h4 class="text-gray-500 text-sm font-semibold mb-1">Company Name</h4>
+          <p class="text-gray-800 font-medium">RS Emblem and New Materials Technology</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
+          <h4 class="text-gray-500 text-sm font-semibold mb-1">Established</h4>
+          <p class="text-gray-800 font-medium">2020</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
+          <h4 class="text-gray-500 text-sm font-semibold mb-1">Founder & CEO</h4>
+          <p class="text-gray-800 font-medium">Md. Shafiqul Islam</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
+          <h4 class="text-gray-500 text-sm font-semibold mb-1">Business Type</h4>
+          <p class="text-gray-800 font-medium">Industrial Materials & Solutions Provider</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
+          <h4 class="text-gray-500 text-sm font-semibold mb-1">Location</h4>
+          <p class="text-gray-800 font-medium">Ashulia, Savar, Dhaka</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
+          <h4 class="text-gray-500 text-sm font-semibold mb-1">Core Industries</h4>
+          <p class="text-gray-800 font-medium">Garments · Footwear · Headwear · Printing</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition lg:col-span-1 sm:col-span-2">
+          <h4 class="text-gray-500 text-sm font-semibold mb-1">Global Partners</h4>
+          <p class="text-gray-800 font-medium">China · Korea · Germany</p>
+        </div>
+
+      </div>
     </div>
-
-    <div class="info-card">
-      <h4>Established</h4>
-      <p>2020</p>
-    </div>
-
-    <div class="info-card">
-      <h4>Founder & CEO</h4>
-      <p>Md. Shafiqul Islam</p>
-    </div>
-
-    <div class="info-card">
-      <h4>Business Type</h4>
-      <p>Industrial Materials & Solutions Provider</p>
-    </div>
-
-    <div class="info-card">
-      <h4>Location</h4>
-      <p>Ashulia, Savar, Dhaka</p>
-    </div>
-
-    <div class="info-card">
-      <h4>Core Industries</h4>
-      <p>Garments · Footwear · Headwear · Printing</p>
-    </div>
-
-    <div class="info-card">
-      <h4>Global Partners</h4>
-      <p>China · Korea · Germany</p>
-    </div>
-
-  </div>
-
-</div>
 
   </div>
 </section>
+<section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+  <div class="max-w-6xl mx-auto px-4">
 
-<section style="background: linear-gradient(135deg, var(--gray-bg) 0%, #FFFFFF 100%); padding: 80px 0;">
-  <div class="container">
-    <div class="section-label">Purpose & Direction</div>
-    <h2 class="section-title">Mission & <span>Vision</span></h2>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px;">
-      <div class="product-card" style="border: 2px solid var(--primary-red); background: white; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(217, 42, 44, 0.1); border-radius: 50%;"></div>
-        <div style="position: relative; z-index: 2; padding: 40px; text-align: center; min-height: 380px; display: flex; flex-direction: column; justify-content: center;">
-          <i class="fas fa-bullseye" style="font-size: 56px; color: var(--primary-red); margin-bottom: 24px;"></i>
-          <h3 style="color: var(--primary-blue); font-size: 24px; margin-bottom: 20px; font-weight: 800;">Our Mission</h3>
-          <p style="color: var(--text-muted); line-height: 1.8; font-size: 15px;">To deliver high-performance materials and advanced technical solutions that elevate product quality, optimize production efficiency, and strengthen our clients' global competitiveness.</p>
-        </div>
+    <!-- Label -->
+    <div class="text-center">
+      <span class="text-sm font-semibold tracking-widest text-gray-500 uppercase">
+        Purpose & Direction
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-3">
+        Mission & <span class="text-red-600">Vision</span>
+      </h2>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+
+      <!-- Mission -->
+      <div class="relative bg-white border-2 border-red-500 rounded-2xl shadow-md overflow-hidden p-8 flex flex-col items-center text-center hover:shadow-xl transition">
+
+        <!-- decorative circle -->
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-red-100 rounded-full"></div>
+
+        <i class="fas fa-bullseye text-5xl text-red-600 mb-6 relative z-10"></i>
+
+        <h3 class="text-2xl font-bold text-blue-800 mb-4 relative z-10">
+          Our Mission
+        </h3>
+
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base relative z-10">
+          To deliver high-performance materials and advanced technical solutions that elevate product quality, optimize production efficiency, and strengthen our clients' global competitiveness.
+        </p>
       </div>
-      <div class="product-card" style="border: 2px solid var(--primary-blue); background: white; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(43, 58, 127, 0.1); border-radius: 50%;"></div>
-        <div style="position: relative; z-index: 2; padding: 40px; text-align: center; min-height: 380px; display: flex; flex-direction: column; justify-content: center;">
-          <i class="fas fa-eye" style="font-size: 56px; color: var(--primary-blue); margin-bottom: 24px;"></i>
-          <h3 style="color: var(--primary-blue); font-size: 24px; margin-bottom: 20px; font-weight: 800;">Our Vision</h3>
-          <p style="color: var(--text-muted); line-height: 1.8; font-size: 15px;">To become a globally recognized leader in advanced printing materials and industrial technologies, known for innovation, reliability, and long-term partnership.</p>
-        </div>
+
+      <!-- Vision -->
+      <div class="relative bg-white border-2 border-blue-700 rounded-2xl shadow-md overflow-hidden p-8 flex flex-col items-center text-center hover:shadow-xl transition">
+
+        <!-- decorative circle -->
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-100 rounded-full"></div>
+
+        <i class="fas fa-eye text-5xl text-blue-700 mb-6 relative z-10"></i>
+
+        <h3 class="text-2xl font-bold text-blue-800 mb-4 relative z-10">
+          Our Vision
+        </h3>
+
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base relative z-10">
+          To become a globally recognized leader in advanced printing materials and industrial technologies, known for innovation, reliability, and long-term partnership.
+        </p>
       </div>
+
     </div>
   </div>
 </section>
-
 <section style="padding: 80px 0;">
   <div class="container">
     <div class="section-label">Our Journey</div>

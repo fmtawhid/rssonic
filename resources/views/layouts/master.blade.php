@@ -43,185 +43,135 @@
 </head>
 <body>
 
-<nav>
+<nav class="main-nav">
   <a href="{{ route('home') }}" class="nav-logo">
     <div class="logo-mark">RS</div>
-    <div class="logo-text">RS Emblem<br><span>New Materials Technology</span></div>
+    <div class="logo-text">
+      RS Emblem<br>
+      <span>New Materials Technology</span>
+    </div>
   </a>
+
   <ul class="nav-links" id="navLinks">
     <li><a href="{{ route('home') }}">Home</a></li>
     <li><a href="{{ route('about') }}">About</a></li>
+
     <li class="nav-dropdown-wrapper">
-      <!-- Button -->
       <button id="productBtn" class="nav-dropdown-btn">
-        Products
-        <i class="fas fa-chevron-down"></i>
+        Products <i class="fas fa-chevron-down"></i>
       </button>
 
-      <!-- Dropdown -->
       <ul id="productDropdown" class="nav-dropdown-menu hidden">
-        <li>
-          <a href="{{ route('machinery') }}">Machinery</a>
-        </li>
-        <li>
-          <a href="{{ route('materials') }}">Raw Materials</a>
-        </li>
+        <li><a href="{{ route('machinery') }}">Machinery</a></li>
+        <li><a href="{{ route('materials') }}">Raw Materials</a></li>
       </ul>
     </li>
+
     <li><a href="{{ route('solutions') }}">Solutions</a></li>
     <li><a href="{{ route('blog') }}">Blog</a></li>
     <li><a href="{{ route('contact') }}" class="nav-cta">Contact Now</a></li>
   </ul>
+
   <div class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </div>
 </nav>
-@yield('content')
 
-<!-- Mobile Bottom Navigation Menu -->
-<nav class="mobile-bottom-nav" style="
+<!-- ================= MOBILE BOTTOM MENU ================= -->
+<div class="mobile-bottom-nav">
+  <a href="{{ route('home') }}" class="item">
+    <i class="fas fa-home"></i>
+    <span>Home</span>
+  </a>
+
+  <a href="{{ route('about') }}" class="item">
+    <i class="fas fa-user"></i>
+    <span>About</span>
+  </a>
+
+  <a href="{{ route('machinery') }}" class="item">
+    <i class="fas fa-boxes"></i>
+    <span>Machinery</span>
+  </a>
+
+  <a href="{{ route('materials') }}" class="item">
+    <i class="fas fa-cogs"></i>
+    <span>Materials</span>
+  </a>
+
+  <a href="{{ route('contact') }}" class="item">
+    <i class="fas fa-phone"></i>
+    <span>Contact</span>
+  </a>
+</div>
+
+<!-- ================= STYLE ================= -->
+<style>
+/* Desktop nav */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* hide mobile bottom nav by default */
+.mobile-bottom-nav {
   display: none;
+}
+
+/* bottom nav design */
+.mobile-bottom-nav {
   position: fixed;
   bottom: 0;
   left: 0;
-  right: 0;
-  background: linear-gradient(135deg, #2B3A7F 0%, #1E2D5A 100%);
-  border-top: 1px solid #1E2F44;
-  padding: 12px 0;
-  z-index: 100;
-  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
-">
-  <div style="
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 0;
-  ">
-    <a href="{{ route('home') }}" style="
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      padding: 8px 12px;
-      color: #CBD5E1;
-      text-decoration: none;
-      font-size: 11px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      text-align: center;
-    " onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='#CBD5E1'">
-      <i class="fas fa-home" style="font-size: 20px;"></i>
-      <span>Home</span>
-    </a>
-    <a href="{{ route('machinery') }}" style="
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      padding: 8px 12px;
-      color: #CBD5E1;
-      text-decoration: none;
-      font-size: 11px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      text-align: center;
-    " onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='#CBD5E1'">
-      <i class="fas fa-industry" style="font-size: 20px;"></i>
-      <span>Products</span>
-    </a>
-    <a href="{{ route('about') }}" style="
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      padding: 8px 12px;
-      color: #CBD5E1;
-      text-decoration: none;
-      font-size: 11px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      text-align: center;
-    " onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='#CBD5E1'">
-      <i class="fas fa-info-circle" style="font-size: 20px;"></i>
-      <span>About</span>
-    </a>
-    <a href="{{ route('blog') }}" style="
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      padding: 8px 12px;
-      color: #CBD5E1;
-      text-decoration: none;
-      font-size: 11px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      text-align: center;
-    " onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='#CBD5E1'">
-      <i class="fas fa-newspaper" style="font-size: 20px;"></i>
-      <span>Blog</span>
-    </a>
-    <a href="{{ route('contact') }}" class="nav-cta" style="
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      padding: 8px 12px;
-      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%) !important;
-      color: white;
-      text-decoration: none;
-      font-size: 11px;
-      font-weight: 600;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      text-align: center;
-      margin: 0 4px;
-    " onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-      <i class="fas fa-phone-alt" style="font-size: 20px;"></i>
-      <span>Contact</span>
-    </a>
-  </div>
-</nav>
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  z-index: 999;
+  display: none;
+  justify-content: space-around;
+  padding: 8px 0;
+}
 
-<!-- Show mobile menu on tablet/mobile -->
-<style>
-  /* Hamburger Menu Styling */
-  .hamburger {
+.mobile-bottom-nav .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: #444;
+  text-decoration: none;
+}
+
+.mobile-bottom-nav .item i {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 700px) {
+
+  /* hide desktop nav links */
+  .nav-links {
     display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 6px;
   }
 
-  .hamburger span {
-    width: 24px;
-    height: 2.5px;
-    background-color: white;
-    border-radius: 2px;
-    transition: all 0.3s ease;
+  /* show hamburger */
+  .hamburger {
+    display: block;
   }
 
-  @media (max-width: 768px) {
-    body {
-      padding-bottom: 90px;
-    }
-    
-    .hamburger {
-      display: flex;
-    }
-
-    .nav-links {
-      display: none;
-    }
-
-    .mobile-bottom-nav {
-      display: block !important;
-    }
+  /* show bottom menu */
+  .mobile-bottom-nav {
+    display: flex;
   }
+}
 </style>
+@yield('content')
+
+
 
 <!-- Footer -->
-<footer id="contact">
+<footer id="contact" style="margin-top: 0; padding: 60px 0 20px 0; background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); position: relative; z-index: 10;">
   <div class="container">
     <!-- Main Footer Grid -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px;">
@@ -307,7 +257,7 @@
   </div>
 
   <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/8801931669605" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" style="position: fixed; bottom: 30px; right: 30px; display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: linear-gradient(135deg, #25D366 0%, #20BA5A 100%); color: white; border-radius: 50%; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4); z-index: 999; font-size: 28px; border: none;" onmouseover="this.style.transform='scale(1.12) translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(37, 211, 102, 0.6)';" onmouseout="this.style.transform='scale(1) translateY(0)'; this.style.boxShadow='0 4px 16px rgba(37, 211, 102, 0.4)';">
+  <a href="https://wa.me/8801931669605" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" id="whatsappBtn" style="position: fixed; bottom: 30px; right: 30px; display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: linear-gradient(135deg, #25D366 0%, #20BA5A 100%); color: white; border-radius: 50%; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4); z-index: 999; font-size: 28px; border: none;" onmouseover="this.style.transform='scale(1.12) translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(37, 211, 102, 0.6)';" onmouseout="this.style.transform='scale(1) translateY(0)'; this.style.boxShadow='0 4px 16px rgba(37, 211, 102, 0.4)';">
     <i class="fab fa-whatsapp"></i>
   </a>
 </footer>
@@ -319,6 +269,23 @@
     <div id="modalBody"></div>
   </div>
 </div>
+
+<script>
+  // Responsive WhatsApp button positioning
+  function updateWhatsAppPosition() {
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    if (whatsappBtn) {
+      if (window.innerWidth <= 768) {
+        whatsappBtn.style.bottom = '90px';
+      } else {
+        whatsappBtn.style.bottom = '30px';
+      }
+    }
+  }
+  window.addEventListener('load', updateWhatsAppPosition);
+  window.addEventListener('resize', updateWhatsAppPosition);
+  updateWhatsAppPosition();
+</script>
 
 <script src="{{ asset('assets/script.js') }}"></script>
 

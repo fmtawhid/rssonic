@@ -7,6 +7,7 @@
       opacity: 0;
       transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -18,6 +19,7 @@
       opacity: 0;
       transform: translateX(-50px);
     }
+
     to {
       opacity: 1;
       transform: translateX(0);
@@ -29,6 +31,7 @@
       opacity: 0;
       transform: translateX(50px);
     }
+
     to {
       opacity: 1;
       transform: translateX(0);
@@ -40,6 +43,7 @@
       opacity: 0;
       transform: scale(0.95);
     }
+
     to {
       opacity: 1;
       transform: scale(1);
@@ -47,9 +51,12 @@
   }
 
   @keyframes floatUp {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0px);
     }
+
     50% {
       transform: translateY(-10px);
     }
@@ -88,7 +95,7 @@
     .section-title {
       font-size: 30px !important;
     }
-    
+
     .hero-premium h1 {
       font-size: 30px !important;
     }
@@ -111,7 +118,7 @@
 ">
   <!-- Overlay -->
   <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22, 33, 62, 0.88) 50%, rgba(15, 52, 96, 0.85) 100%); z-index: 1;"></div>
-  
+
   <div class="container" style="position: relative; z-index: 2;">
     <div style="max-width: 700px;">
       <h1 style="
@@ -125,7 +132,7 @@
       ">
         RS Emblem <span style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">& New Materials</span>
       </h1>
-      
+
       <div style="
         font-size: 18px;
         color: #ffd700;
@@ -136,7 +143,7 @@
       ">
         ✨ Innovative materials · Precision machinery
       </div>
-      
+
       <p style="
         color: #e0e0e0;
         font-size: 16px;
@@ -146,7 +153,7 @@
       ">
         Advanced printing materials, high-performance polymers, and industrial machinery solutions. Bridging global technology with local production — trusted by garment, footwear, and accessory manufacturers.
       </p>
-      
+
       <div style="
         display: flex;
         gap: 16px;
@@ -225,56 +232,74 @@
         Machinery & <span style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Products </span>
       </h2>
     </div>
-    
+
     <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; margin-bottom: 50px;">
+
       @forelse ($products as $product)
-      <div class="product-card" style="
-        background: white;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        animation: fadeInUp 0.8s ease-out forwards;
-        opacity: 0;
-        cursor: pointer;
-      " onmouseover="
-        this.style.transform='translateY(-10px)';
-        this.style.boxShadow='0 16px 40px rgba(0, 0, 0, 0.15)';
-        this.querySelector('.product-img').style.transform='scale(1.1)';
-      " onmouseout="
-        this.style.transform='translateY(0)';
-        this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)';
-        this.querySelector('.product-img').style.transform='scale(1)';
+
+      <a href="{{ route('product-details', $product->slug) }}" style="text-decoration:none; color:inherit;">
+
+        <div class="product-card" style="
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    cursor: pointer;
+  "
+          onmouseover="
+    this.style.transform='translateY(-10px)';
+    this.style.boxShadow='0 16px 40px rgba(0, 0, 0, 0.15)';
+    this.querySelector('.product-img').style.transform='scale(1.1)';
+  "
+          onmouseout="
+    this.style.transform='translateY(0)';
+    this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)';
+    this.querySelector('.product-img').style.transform='scale(1)';
+  ">
+
+          <div style="overflow: hidden; height: 220px;">
+            <img class="product-img"
+              src="https://picsum.photos/id/{{ rand(0, 200) }}/500/200"
+              alt="{{ $product->name }}"
+              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s ease;">
+          </div>
+
+          <div class="product-info" style="padding: 24px;">
+            <h3 style="font-size:18px; font-weight:700; color:#1a1a2e; margin-bottom:10px;">
+              {{ $product->name }}
+            </h3>
+
+            <p style="color:#666; font-size:14px; line-height:1.6; margin-bottom:16px;">
+              {{ Str::limit($product->description, 80) }}
+            </p>
+
+            <span style="
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        color:#ff6b6b;
+        font-weight:600;
       ">
-        <div style="overflow: hidden; height: 220px;">
-          <img class="product-img" src="https://picsum.photos/id/{{ rand(0, 200) }}/500/200" alt="{{ $product->name }}" style="
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-          ">
+              <i class="fas fa-arrow-right"></i> View Details
+            </span>
+
+          </div>
+
         </div>
-        <div class="product-info" style="padding: 24px;">
-          <h3 style="font-size: 18px; font-weight: 700; color: #1a1a2e; margin-bottom: 10px;">{{ $product->name }}</h3>
-          <p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 16px;">{{ Str::limit($product->description, 80) }}</p>
-          <a href="{{ route('product-details', $product->slug) }}" style="
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #ff6b6b;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-          " onmouseover="this.style.color='#ee5a6f'; this.style.transform='translateX(5px)';" onmouseout="this.style.color='#ff6b6b'; this.style.transform='translateX(0)';">
-            <i class="fas fa-arrow-right"></i> View Details
-          </a>
-        </div>
-      </div>
+
+      </a>
+
       @empty
-      <p style="text-align: center; padding: 40px; grid-column: 1/-1;">No products available.</p>
+      <p style="text-align:center; padding:40px; grid-column:1/-1;">
+        No products available.
+      </p>
       @endforelse
+
     </div>
-    
+
     <div style="text-align: center; animation: fadeInUp 1s ease-out forwards; opacity: 0;">
       <a href="#contact" class="btn-circle btn-primary" style="
         background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
@@ -305,7 +330,7 @@
     border-radius: 50%;
     z-index: 0;
   "></div>
-  
+
   <div class="container" style="position: relative; z-index: 1;">
     <div class="about-grid">
       <div style="animation: slideInLeft 1s ease-out forwards; opacity: 0;">
@@ -444,7 +469,7 @@
     border-radius: 50%;
     z-index: 0;
   "></div>
-  
+
   <div class="container" style="position: relative; z-index: 1;">
     <div style="text-align: center; margin-bottom: 60px; animation: fadeInUp 0.8s ease-out forwards; opacity: 0;">
       <div class="section-label" style="color: #ff6b6b; font-weight: 700;">💡 Core capabilities</div>
@@ -457,7 +482,7 @@
         Business <span style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Segments</span> We Serve
       </h2>
     </div>
-    
+
     <div class="segments-grid" style="
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -492,7 +517,7 @@
         <h3 style="color: #1a1a2e; font-weight: 700; margin-bottom: 12px;">Advanced Industrial Materials</h3>
         <p style="color: #666; line-height: 1.6;">Silicone, TPU, PVC-based materials engineered for durability and premium branding.</p>
       </div>
-      
+
       <div class="seg-card" style="
         background: white;
         padding: 40px 30px;
@@ -522,7 +547,7 @@
         <h3 style="color: #1a1a2e; font-weight: 700; margin-bottom: 12px;">Precision Machinery</h3>
         <p style="color: #666; line-height: 1.6;">Dispensing systems, molding equipment, and integrated production lines.</p>
       </div>
-      
+
       <div class="seg-card" style="
         background: white;
         padding: 40px 30px;
@@ -552,7 +577,7 @@
         <h3 style="color: #1a1a2e; font-weight: 700; margin-bottom: 12px;">Global Sourcing</h3>
         <p style="color: #666; line-height: 1.6;">Strategic partnerships with China, Korea & Germany — reliable supply chain.</p>
       </div>
-      
+
       <div class="seg-card" style="
         background: white;
         padding: 40px 30px;
@@ -605,7 +630,7 @@
         Our <span style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Work Process</span>
       </h2>
     </div>
-    
+
     <div class="process-steps" style="
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -641,7 +666,7 @@
         <h4 style="margin: 12px 0 4px; color: #1a1a2e; font-weight: 700;">Inquiry</h4>
         <p style="font-size: 13px; color: #666;">Requirement analysis</p>
       </div>
-      
+
       <div class="step-card" style="
         background: white;
         padding: 30px 24px;
@@ -671,7 +696,7 @@
         <h4 style="margin: 12px 0 4px; color: #1a1a2e; font-weight: 700;">Consult</h4>
         <p style="font-size: 13px; color: #666;">Product recommendation</p>
       </div>
-      
+
       <div class="step-card" style="
         background: white;
         padding: 30px 24px;
@@ -701,7 +726,7 @@
         <h4 style="margin: 12px 0 4px; color: #1a1a2e; font-weight: 700;">Sampling</h4>
         <p style="font-size: 13px; color: #666;">Approval & testing</p>
       </div>
-      
+
       <div class="step-card" style="
         background: white;
         padding: 30px 24px;
@@ -731,7 +756,7 @@
         <h4 style="margin: 12px 0 4px; color: #1a1a2e; font-weight: 700;">Bulk Order</h4>
         <p style="font-size: 13px; color: #666;">Production & QC</p>
       </div>
-      
+
       <div class="step-card" style="
         background: white;
         padding: 30px 24px;
@@ -784,7 +809,7 @@
         Why Industry Leaders <span style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Choose Us</span>
       </h2>
     </div>
-    
+
     <div class="why-grid" style="
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -817,7 +842,7 @@
         <h3 style="margin: 12px 0 8px; font-size: 18px; font-weight: 700; color: #1a1a2e;">Technical Expertise</h3>
         <p style="font-size: 14px; color: #666; line-height: 1.6;">Advanced polymer knowledge & hands-on industrial guidance.</p>
       </div>
-      
+
       <div style="
         background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(0, 242, 254, 0.04) 100%);
         border-radius: 20px;
@@ -845,7 +870,7 @@
         <h3 style="margin: 12px 0 8px; font-size: 18px; font-weight: 700; color: #1a1a2e;">Global Sourcing</h3>
         <p style="font-size: 14px; color: #666; line-height: 1.6;">Direct from top manufacturers in China, Korea & Germany.</p>
       </div>
-      
+
       <div style="
         background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(255, 237, 78, 0.04) 100%);
         border-radius: 20px;
@@ -873,7 +898,7 @@
         <h3 style="margin: 12px 0 8px; font-size: 18px; font-weight: 700; color: #1a1a2e;">Quality Assurance</h3>
         <p style="font-size: 14px; color: #666; line-height: 1.6;">Batch consistency & international standard testing.</p>
       </div>
-      
+
       <div style="
         background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 217, 111, 0.04) 100%);
         border-radius: 20px;
@@ -922,7 +947,7 @@
         Industry News & <span style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Expert Articles</span>
       </h2>
     </div>
-    
+
     <div class="blog-grid" style="
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -988,7 +1013,7 @@
       <p style="text-align: center; padding: 40px; grid-column: 1/-1;">No blog articles available.</p>
       @endforelse
     </div>
-    
+
     <div style="text-align: center; animation: fadeInUp 1s ease-out forwards; opacity: 0;">
       <a href="{{ route('blog') }}" class="btn-circle btn-primary" style="
         background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
@@ -1013,7 +1038,7 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    margin: 80px 0 60px;
+    margin: 60px 0 40px 0;
     animation: fadeInUp 0.8s ease-out forwards;
     opacity: 0;
   ">
@@ -1027,7 +1052,7 @@
       background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
       z-index: 0;
     "></div>
-    
+
     <div style="position: relative; z-index: 1;">
       <h2 style="
         font-family: 'Playfair Display';
@@ -1084,9 +1109,9 @@
 
   // Observe all elements with animation
   document.querySelectorAll('[style*="animation"]').forEach(el => {
-    if (el.style.animation.includes('fadeInUp') || 
-        el.style.animation.includes('slideIn') || 
-        el.style.animation.includes('scaleIn')) {
+    if (el.style.animation.includes('fadeInUp') ||
+      el.style.animation.includes('slideIn') ||
+      el.style.animation.includes('scaleIn')) {
       observer.observe(el);
     }
   });
@@ -1104,7 +1129,7 @@
 
   // Smooth scroll behavior
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
