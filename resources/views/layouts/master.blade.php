@@ -39,10 +39,48 @@
 <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
 
 <!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com" defer></script>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+<!-- ================= SIMPLE LOADER ================= -->
 
+<style>
+  #loader {
+    position: fixed;
+    inset: 0;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+  }
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #e5e5e5;
+    border-top: 4px solid #d92a2c;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+
+<script>
+  window.addEventListener("load", function () {
+    document.getElementById("loader").style.display = "none";
+  });
+</script>
 <nav class="main-nav">
   <a href="{{ route('home') }}" class="nav-logo">
     <div class="logo-mark">RS</div>
