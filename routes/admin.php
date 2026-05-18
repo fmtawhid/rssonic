@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\SalesmanController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\CategoryController;
 
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
@@ -34,6 +35,18 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
             'edit' => 'products.edit',
             'update' => 'products.update',
             'destroy' => 'products.destroy',
+        ]
+    ]);
+
+    // Categories Routes
+    Route::resource('categories', CategoryController::class, [
+        'names' => [
+            'index' => 'categories.index',
+            'create' => 'categories.create',
+            'store' => 'categories.store',
+            'edit' => 'categories.edit',
+            'update' => 'categories.update',
+            'destroy' => 'categories.destroy',
         ]
     ]);
 

@@ -89,12 +89,16 @@
         <!-- Sidebar -->
         <div id="sidebar" class="sidebar bg-white w-64 flex flex-col border-r border-gray-200">
             <!-- Logo -->
-            <div class="p-6 border-b border-gray-200">
-                <h1 class="text-xl font-bold flex items-center text-primary-700">
-                    <i class="fas fa-credit-card mr-2"></i>
-                    RS Sonic
-                </h1>
-                <p class="text-xs text-gray-500 mt-1">{{ auth()->user()->role }} dashboard</p>
+            <div class="p-6 border-b border-gray-200 flex flex-col items-center justify-center text-center">
+                <img 
+                    src="{{ asset('assets/img/favicon.png') }}" 
+                    alt="RS Emblem Logo" 
+                    class="h-20 w-auto mb-3"
+                >
+
+                <p class="text-xs text-gray-500">
+                    {{ auth()->user()->role }} dashboard
+                </p>
             </div>
 
             <!-- Navigation -->
@@ -128,10 +132,16 @@
                                     Product List
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{ route('admin.categories.index') }}"
+                                    class="block p-2 rounded text-gray-600 hover:bg-gray-100 {{ request()->routeIs('admin.categories.*') ? 'bg-primary-50 text-primary-700' : '' }}">
+                                    Categories
+                                </a>
+                            </li>
                           
                         </ul>
                     </li>
-                    <!-- Products -->
+                    <!-- Blogs -->
                     <li>
                         <div class="p-3 text-gray-500 uppercase text-xs font-semibold">
                             Blogs
@@ -190,31 +200,6 @@
                     </div>
 
                     <div class="flex items-center space-x-4">
-                        <!-- Notification with Dropdown -->
-                        <div class="relative hidden md:block">
-                            <button id="notificationBtn" class="relative focus:outline-none">
-                                <i class="fas fa-bell text-gray-500"></i>
-                                <span
-                                    class="absolute -top-1 -right-1 bg-primary-700 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">3</span>
-                            </button>
-                            <!-- Notification Dropdown -->
-                            <div id="notificationDropdown"
-                                class="hidden absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-20">
-                                <ul>
-                                    <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Notification 1</li>
-                                    <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Notification 2</li>
-                                    <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Notification 3</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Search -->
-                        <div class="relative hidden md:block">
-                            <input type="text" placeholder="Search..."
-                                class="pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:border-transparent">
-                            <i class="fas fa-search absolute left-3 top-2.5 text-gray-400"></i>
-                        </div>
-
                         <!-- Admin Dropdown -->
                         <div class="relative">
                             <button id="adminBtn" class="flex items-center space-x-2 focus:outline-none">

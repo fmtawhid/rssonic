@@ -11,12 +11,19 @@ class Product extends Model
         'name',
         'slug',
         'image',
+        'category_id',
         'product_type',
         'description',
         'meta_description',
         'meta_keywords',
         'is_active',
     ];
+
+    // Relationship with Category
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 
     public function attributes()
     {

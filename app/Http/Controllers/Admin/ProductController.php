@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Attribute;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -20,7 +21,8 @@ class ProductController extends Controller
     // ================= CREATE =================
     public function create()
     {
-        return view('admin.products.create');
+        $categories = Category::where('is_active', true)->get();
+        return view('admin.products.create', compact('categories'));
     }
 
     // ================= STORE =================
@@ -73,7 +75,8 @@ class ProductController extends Controller
     // ================= EDIT =================
     public function edit(Product $product)
     {
-        return view('admin.products.edit', compact('product'));
+        $categories = Category::where('is_active', true)->get();
+        return view('admin.products.edit', compact('product', 'categories'));
     }
 
     // ================= UPDATE =================

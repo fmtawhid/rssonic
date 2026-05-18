@@ -17,18 +17,18 @@
 <meta property="og:title" content="{{ $seoTitle ?? 'RS Emblem | Advanced Materials & Machinery' }}">
 <meta property="og:description" content="{{ $seoDescription ?? 'Premium industrial materials and machinery solutions.' }}">
 <meta property="og:url" content="{{ url()->current() }}">
-<meta property="og:image" content="{{ asset('assets/og-image.jpg') }}">
+<meta property="og:image" content="{{ asset('assets/img/favicon.png') }}">
 <meta property="og:site_name" content="RS Emblem">
 
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ $seoTitle ?? 'RS Emblem' }}">
 <meta name="twitter:description" content="{{ $seoDescription ?? 'Advanced materials and machinery solutions.' }}">
-<meta name="twitter:image" content="{{ asset('assets/og-image.jpg') }}">
+<meta name="twitter:image" content="{{ asset('assets/img/favicon.png') }}">
 
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
-<link rel="apple-touch-icon" href="{{ asset('assets/apple-touch-icon.png') }}">
+<link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
+<link rel="apple-touch-icon" href="{{ asset('assets/img/favicon.png') }}">
 
 <!-- Fonts & Styles -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -83,11 +83,7 @@
 </script>
 <nav class="main-nav">
   <a href="{{ route('home') }}" class="nav-logo">
-    <div class="logo-mark">RS</div>
-    <div class="logo-text">
-      RS Emblem<br>
-      <span>New Materials Technology</span>
-    </div>
+    <img src="{{ asset('assets/img/logo.png') }}" alt="RS Emblem Logo" style="height: 60px; width: auto;">
   </a>
 
   <ul class="nav-links" id="navLinks">
@@ -203,6 +199,8 @@
     display: flex;
   }
 }
+
+
 </style>
 @yield('content')
 
@@ -216,8 +214,7 @@
       
       <!-- Brand Section -->
       <div>
-        <div class="logo-mark" style="margin-bottom: 16px; display: inline-block;">RS</div>
-        <h4 style="color: white; font-weight: 800; margin-bottom: 12px; font-size: 18px;">RS Emblem</h4>
+        <img src="{{ asset('assets/img/logo.png') }}" alt="RS Emblem Logo" style="height: 100px; width: auto; margin-bottom: 16px; display: block;">
         <p style="color: rgba(255, 255, 255, 0.7); font-size: 14px; line-height: 1.7; margin: 0;">Advanced printing materials & industrial solutions for manufacturing excellence.</p>
       </div>
 
@@ -279,18 +276,15 @@
     </div>
 
     <!-- Footer Divider -->
-    <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 24px 0; margin-top: 24px;"></div>
+    <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 5px 0; margin-top: 24px;"></div>
 
     <!-- Bottom Bar -->
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
-      <div>
+      <div style="margin-bottom:50px;">
         <p style="margin: 0 0 4px 0; font-size: 14px; font-weight: 600; color: white;">© 2025 RS Emblem & New Materials Technology. All rights reserved.</p>
-        <p style="margin: 0; font-size: 12px; color: rgba(255, 255, 255, 0.6);">Founded by Md. Shafiqul Islam | Made with ❤️ for excellence</p>
+        <p style="margin: 0; font-size: 12px; color: rgba(255, 255, 255, 0.6);">Developed By <a href="https://thegrowsoft.com" target="_blank" rel="noopener noreferrer" style="color: var(--primary-red); text-decoration: underline;">Growsoft</a></p>
       </div>
-      <div style="text-align: right;">
-        <p style="margin: 0 0 4px 0; font-weight: 600; font-size: 13px; color: rgba(255, 255, 255, 0.7);">Website by</p>
-        <a href="https://thegrowsoft.com" target="_blank" rel="noopener noreferrer" style="color: var(--primary-red); text-decoration: none; font-weight: 700; font-size: 13px; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">🚀 Growsoft</a>
-      </div>
+
     </div>
   </div>
 
