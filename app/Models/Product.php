@@ -32,6 +32,12 @@ class Product extends Model
                     ->withTimestamps();
     }
 
+    public function features()
+    {
+        return $this->belongsToMany(Feature::class, 'product_features')
+                    ->withTimestamps();
+    }
+
     // Auto slug generate
     protected static function boot()
     {

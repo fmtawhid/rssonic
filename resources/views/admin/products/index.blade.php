@@ -60,6 +60,11 @@
 
                         <td class="p-3 text-right space-x-2">
 
+                            <a href="{{ route('admin.products.show', $product->id) }}"
+                               class="px-3 py-1 bg-blue-500 text-white rounded text-sm">
+                                View
+                            </a>
+
                             <a href="{{ route('admin.products.edit', $product->id) }}"
                                class="px-3 py-1 bg-green-500 text-white rounded text-sm">
                                 Edit

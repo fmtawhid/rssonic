@@ -50,7 +50,7 @@
 
         <p class="product-desc">{{ $product->description }}</p>
 
-        @if($product->attributes->count() > 0)
+        <!-- @if($product->attributes->count() > 0)
           <div class="quick-specs">
             <h4 style="color: var(--primary-blue);">Technical Specifications</h4>
             <ul style="color: var(--text-muted);">
@@ -59,11 +59,26 @@
               @endforeach
             </ul>
           </div>
-        @endif
+        @endif -->
 
-        <div class="action-buttons">
-          <a href="{{ route('contact') }}" class="btn-circle btn-red">Request a Quote <i class="fas fa-arrow-right"></i></a>
-          <a href="javascript:void(0)" class="btn-circle btn-outline-blue" onclick="alert('Datasheet coming soon!')">Download Datasheet <i class="fas fa-download"></i></a>
+        <!-- @if($product->features->count() > 0)
+          <div class="quick-specs" style="margin-top: 20px;">
+            <h4 style="color: var(--primary-blue);">✨ Product Features</h4>
+            <ul style="color: var(--text-muted); list-style-type: disc; padding-left: 20px; line-height: 1.8;">
+              @foreach($product->features as $feature)
+                <li><strong style="color: var(--primary-blue);">{{ $feature->name }}</strong></li>
+              @endforeach
+            </ul>
+          </div>
+        @endif -->
+
+        <div class="action-buttons" style="display: grid; gap: 12px; margin-top: 25px;">
+          <a href="{{ route('contact') }}" class="btn-circle btn-red" style="text-align: center; padding: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i class="fas fa-envelope" style="font-size: 16px;"></i> Request a Quote
+          </a>
+          <a href="https://wa.me/+8801234567890?text=Hi%20I%20am%20interested%20in%20{{ urlencode($product->name) }}" target="_blank" class="btn-circle" style="text-align: center; padding: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; background: #25D366; color: white; border-radius: 6px; text-decoration: none; transition: all 0.2s;">
+            <i class="fab fa-whatsapp" style="font-size: 18px;"></i> Chat on WhatsApp
+          </a>
         </div>
 
         <div class="stock-info">
@@ -97,48 +112,40 @@
   </div>
 </section>
 
-<section style="padding: 60px 0;">
+
+@if($product->features->count() > 0)
+<section style="padding: 60px 0; background: linear-gradient(135deg, rgba(41, 128, 185, 0.05) 0%, rgba(46, 204, 113, 0.05) 100%);">
   <div class="container">
-    <h3 style="font-family: 'Playfair Display'; font-size: 28px; color: var(--primary-blue); margin-bottom: 30px;">Product Information</h3>
-    <div class="applications-grid">
-      <div class="app-use-card">
-        <div class="app-icon"><i class="fas fa-info-circle"></i></div>
-        <h4>Product Type</h4>
-        <p style="text-transform: capitalize;">{{ str_replace('_', ' ', $product->product_type) }}</p>
-      </div>
-      <div class="app-use-card">
-        <div class="app-icon"><i class="fas fa-box"></i></div>
-        <h4>SKU</h4>
-        <p>{{ $product->slug }}</p>
-      </div>
-      <div class="app-use-card">
-        <div class="app-icon"><i class="fas fa-list"></i></div>
-        <h4>Specifications Count</h4>
-        <p>{{ $product->attributes->count() }} technical specs</p>
-      </div>
-      <div class="app-use-card">
-        <div class="app-icon"><i class="fas fa-check"></i></div>
-        <h4>Status</h4>
-        <p>{{ $product->is_active ? 'Available' : 'Unavailable' }}</p>
-      </div>
+    <h3 style="font-family: 'Playfair Display'; font-size: 28px; color: var(--primary-blue); margin-bottom: 40px;">✨ Key Features</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+      @foreach($product->features as $feature)
+        <div style="display: flex; align-items: center; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid var(--primary-red);">
+          <div style="font-size: 24px; margin-right: 15px; color: var(--primary-red);">✓</div>
+          <div>
+            <h5 style="margin: 0; color: var(--primary-blue); font-weight: 600;">{{ $feature->name }}</h5>
+            <p style="margin: 5px 0 0 0; color: var(--text-muted); font-size: 13px;">Premium Quality Feature</p>
+          </div>
+        </div>
+      @endforeach
     </div>
   </div>
 </section>
-
-<section style="background: var(--gray-bg); padding: 60px 0;">
+@endif
+<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-red) 100%); padding: 60px 0; color: white; text-align: center;">
   <div class="container">
-    <h3 style="font-family: 'Playfair Display'; font-size: 28px; color: var(--primary-blue); margin-bottom: 30px;">Get in Touch</h3>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-header">
-          <div class="review-author">
-            <h5>Interested in this product?</h5>
-            <p>Contact our sales team</p>
-          </div>
-        </div>
-        <p class="review-text">We provide comprehensive product information, technical support, and custom solutions for your manufacturing needs.</p>
-        <a href="{{ route('contact') }}" class="btn-circle btn-red" style="margin-top: 15px;">Contact Us <i class="fas fa-arrow-right"></i></a>
-      </div>
+    <h3 style="font-family: 'Playfair Display'; font-size: 36px; margin-bottom: 15px; margin-top: 0;">Ready to Get Started?</h3>
+    <p style="font-size: 16px; margin-bottom: 30px; opacity: 0.9;">Contact our team today for more information or to request a quotation</p>
+    
+    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+      <a href="{{ route('contact') }}" style="display: inline-block; padding: 14px 32px; background: white; color: var(--primary-blue); border-radius: 6px; text-decoration: none; font-weight: 600; transition: transform 0.2s; display: flex; align-items: center; gap: 8px;">
+        <i class="fas fa-envelope"></i> Contact Us
+      </a>
+      <a href="https://wa.me/+8801234567890?text=Hi%20I%20am%20interested%20in%20products" target="_blank" style="display: inline-block; padding: 14px 32px; background: #25D366; color: white; border-radius: 6px; text-decoration: none; font-weight: 600; border: 2px solid #25D366; transition: all 0.2s; display: flex; align-items: center; gap: 8px;">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+      <a href="javascript:history.back()" style="display: inline-block; padding: 14px 32px; background: rgba(255,255,255,0.2); color: white; border-radius: 6px; text-decoration: none; font-weight: 600; border: 2px solid white; transition: all 0.2s; display: flex; align-items: center; gap: 8px;">
+        <i class="fas fa-arrow-left"></i> Back to Products
+      </a>
     </div>
   </div>
 </section>

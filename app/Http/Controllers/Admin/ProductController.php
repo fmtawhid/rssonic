@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Attribute;
+use App\Models\Feature;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -23,6 +24,12 @@ class ProductController extends Controller
     {
         $categories = Category::where('is_active', true)->get();
         return view('admin.products.create', compact('categories'));
+    }
+
+    // ================= SHOW =================
+    public function show(Product $product)
+    {
+        return view('admin.products.show', compact('product'));
     }
 
     // ================= STORE =================
@@ -65,6 +72,23 @@ class ProductController extends Controller
                     
                     // Attach to product with value
                     $product->attributes()->attach($attribute->id, ['value' => $attr['value']]);
+                }
+            }
+        }
+
+        // Save custom features
+        if ($request->has('custom_features')) {
+            $customFeatures = $request->input('custom_features');
+            foreach ($customFeatures as $feat) {
+                if (!empty($feat)) {
+                    // Create or get feature by name
+                    $feature = Feature::firstOrCreate(
+                        ['name' => $feat],
+                        ['name' => $feat]
+                    );
+                    
+                    // Attach to product
+                    $product->features()->attach($feature->id);
                 }
             }
         }
@@ -125,6 +149,26 @@ class ProductController extends Controller
                     
                     // Attach to product with value
                     $product->attributes()->attach($attribute->id, ['value' => $attr['value']]);
+                }
+            }
+        }
+
+        // Sync custom features
+        // First, detach all existing features
+        $product->features()->detach();
+        
+        if ($request->has('custom_features')) {
+            $customFeatures = $request->input('custom_features');
+            foreach ($customFeatures as $feat) {
+                if (!empty($feat)) {
+                    // Create or get feature by name
+                    $feature = Feature::firstOrCreate(
+                        ['name' => $feat],
+                        ['name' => $feat]
+                    );
+                    
+                    // Attach to product
+                    $product->features()->attach($feature->id);
                 }
             }
         }

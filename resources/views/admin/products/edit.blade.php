@@ -60,6 +60,19 @@
             </div>
         </div>
 
+        <div class="border p-4 rounded bg-gray-50">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold">Product Features</h3>
+                <button type="button" onclick="addFeatureField()" class="px-3 py-1 bg-green-500 text-white rounded text-sm">
+                    + Add Feature
+                </button>
+            </div>
+            
+            <div id="featuresContainer">
+                <!-- Existing and new feature rows will be here -->
+            </div>
+        </div>
+
         <button class="px-5 py-2 bg-green-600 text-white rounded">
             Update Product
         </button>
@@ -68,7 +81,9 @@
 
     <script>
         let attributeCount = 0;
+        let featureCount = 0;
         const existingAttributes = @json($product->attributes->map(fn($a) => ['name' => $a->name, 'value' => $a->pivot->value])->values());
+        const existingFeatures = @json($product->features->pluck('name')->values());
 
         function addAttributeField(name = '', value = '') {
             attributeCount++;
@@ -101,7 +116,33 @@
             document.getElementById(id).remove();
         }
 
-        // Load existing attributes on page load
+        function addFeatureField(name = '') {
+            featureCount++;
+            const container = document.getElementById('featuresContainer');
+            
+            const row = document.createElement('div');
+            row.className = 'mb-3 flex gap-2 feature-row';
+            row.id = 'feature-' + featureCount;
+            row.innerHTML = `
+                <input type="text" 
+                       name="custom_features[${featureCount}]"
+                       placeholder="Feature Name (e.g., Warranty, Fast Delivery)"
+                       value="${name}"
+                       class="flex-1 border p-2 rounded">
+                <button type="button" onclick="removeFeatureField('feature-${featureCount}')" 
+                        class="px-3 py-2 bg-red-500 text-white rounded text-sm">
+                    Remove
+                </button>
+            `;
+            
+            container.appendChild(row);
+        }
+
+        function removeFeatureField(id) {
+            document.getElementById(id).remove();
+        }
+
+        // Load existing attributes and features on page load
         window.addEventListener('DOMContentLoaded', function() {
             existingAttributes.forEach(attr => {
                 addAttributeField(attr.name, attr.value);
@@ -110,6 +151,15 @@
             // Add one empty field if no existing attributes
             if (existingAttributes.length === 0) {
                 addAttributeField();
+            }
+
+            existingFeatures.forEach(feat => {
+                addFeatureField(feat);
+            });
+            
+            // Add one empty field if no existing features
+            if (existingFeatures.length === 0) {
+                addFeatureField();
             }
         });
     </script>

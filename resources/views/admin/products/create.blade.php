@@ -49,6 +49,19 @@
             </div>
         </div>
 
+        <div class="border p-4 rounded bg-gray-50">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold">Product Features</h3>
+                <button type="button" onclick="addFeatureField()" class="px-3 py-1 bg-green-500 text-white rounded text-sm">
+                    + Add Feature
+                </button>
+            </div>
+            
+            <div id="featuresContainer">
+                <!-- Feature rows will be added here -->
+            </div>
+        </div>
+
         <button class="px-5 py-2 bg-blue-600 text-white rounded">
             Save Product
         </button>
@@ -57,6 +70,7 @@
 
     <script>
         let attributeCount = 0;
+        let featureCount = 0;
 
         function addAttributeField() {
             attributeCount++;
@@ -87,9 +101,35 @@
             document.getElementById(id).remove();
         }
 
+        function addFeatureField() {
+            featureCount++;
+            const container = document.getElementById('featuresContainer');
+            
+            const row = document.createElement('div');
+            row.className = 'mb-3 flex gap-2 feature-row';
+            row.id = 'feature-' + featureCount;
+            row.innerHTML = `
+                <input type="text" 
+                       name="custom_features[${featureCount}]"
+                       placeholder="Feature Name (e.g., Warranty, Fast Delivery)"
+                       class="flex-1 border p-2 rounded">
+                <button type="button" onclick="removeFeatureField('feature-${featureCount}')" 
+                        class="px-3 py-2 bg-red-500 text-white rounded text-sm">
+                    Remove
+                </button>
+            `;
+            
+            container.appendChild(row);
+        }
+
+        function removeFeatureField(id) {
+            document.getElementById(id).remove();
+        }
+
         // Add one empty field on page load
         window.addEventListener('DOMContentLoaded', function() {
             addAttributeField();
+            addFeatureField();
         });
     </script>
 
