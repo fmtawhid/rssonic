@@ -30,6 +30,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'category_id' => 'required|exists:categories,id',
             'product_type' => 'required|in:machine,raw_material',
             'image' => 'nullable|image|max:2048',
         ]);
@@ -84,6 +85,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'category_id' => 'required|exists:categories,id',
             'product_type' => 'required|in:machine,raw_material',
             'image' => 'nullable|image|max:2048',
         ]);

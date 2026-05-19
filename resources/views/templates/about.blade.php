@@ -196,10 +196,9 @@
     <div style="position: absolute; bottom: -100px; left: -100px; width: 300px; height: 300px; background: rgba(217, 42, 44, 0.08); border-radius: 50%; pointer-events: none;"></div>
     <div class="founder-grid" style="position: relative; z-index: 2;">
       <div class="founder-card">
-        <div class="founder-avatar" style=" box-shadow: 0 12px 32px rgba(217, 42, 44, 0.4);">S</div>
+        <img src="{{ asset('assets/img/ceo.jpeg') }}" alt="Md. Shafiqul Islam" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: 0 12px 32px rgba(217, 42, 44, 0.4); display: block; margin: 0 auto 16px;">
         <h3 style="font-size: 20px; font-weight: 800;color:#fff;">Md. Shafiqul Islam</h3>
         <div class="founder-role" style="font-size: 14px;">Founder & CEO</div>
-        <p style="font-size: 13px; opacity: 0.9;">RS Emblem & New Materials Technology</p>
       </div>
       <div class="founder-message">
         <div class="section-label" style="color: var(--primary-red);">Founder's Message</div>

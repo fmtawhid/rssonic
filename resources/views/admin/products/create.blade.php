@@ -16,6 +16,13 @@
                placeholder="Product Name"
                class="w-full border p-2 rounded">
 
+        <select name="category_id" class="w-full border p-2 rounded">
+            <option value="">Select Category</option>
+            @foreach($categories as $category)
+                <option value="{{ $category->id }}">{{ $category->name }}</option>
+            @endforeach
+        </select>
+
         <select name="product_type" class="w-full border p-2 rounded">
             <option value="machine">Machine</option>
             <option value="raw_material">Raw Material</option>

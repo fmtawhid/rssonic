@@ -17,6 +17,16 @@
                value="{{ $product->name }}"
                class="w-full border p-2 rounded">
 
+        <select name="category_id" class="w-full border p-2 rounded">
+            <option value="">Select Category</option>
+            @foreach($categories as $category)
+                <option value="{{ $category->id }}" 
+                    {{ $product->category_id == $category->id ? 'selected' : '' }}>
+                    {{ $category->name }}
+                </option>
+            @endforeach
+        </select>
+
         <select name="product_type" class="w-full border p-2 rounded">
             <option value="machine" {{ $product->product_type == 'machine' ? 'selected' : '' }}>
                 Machine
