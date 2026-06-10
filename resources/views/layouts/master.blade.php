@@ -6,23 +6,23 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <!-- SEO Meta Tags -->
-<title>{{ $seoTitle ?? 'RS Emblem | Advanced Materials & Machinery – Bangladesh' }}</title>
-<meta name="description" content="{{ $seoDescription ?? 'RS Emblem offers advanced printing materials, high-performance polymers, TPU heat transfer systems, and industrial machinery solutions for Bangladesh and globally.' }}">
+<title>{{ $seoTitle ?? 'RS Sonic | Advanced Materials & Machinery – Bangladesh' }}</title>
+<meta name="description" content="{{ $seoDescription ?? 'RS Sonic offers advanced printing materials, high-performance polymers, TPU heat transfer systems, and industrial machinery solutions for Bangladesh and globally.' }}">
 <meta name="keywords" content="{{ $seoKeywords ?? 'industrial materials, machinery solutions, printing materials, polymers, TPU heat transfer, Bangladesh' }}">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{{ url()->current() }}">
 
 <!-- Open Graph Meta Tags -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="{{ $seoTitle ?? 'RS Emblem | Advanced Materials & Machinery' }}">
+<meta property="og:title" content="{{ $seoTitle ?? 'RS Sonic | Advanced Materials & Machinery' }}">
 <meta property="og:description" content="{{ $seoDescription ?? 'Premium industrial materials and machinery solutions.' }}">
 <meta property="og:url" content="{{ url()->current() }}">
 <meta property="og:image" content="{{ asset('assets/img/favicon.png') }}">
-<meta property="og:site_name" content="RS Emblem">
+<meta property="og:site_name" content="RS Sonic">
 
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ $seoTitle ?? 'RS Emblem' }}">
+<meta name="twitter:title" content="{{ $seoTitle ?? 'RS Sonic | Advanced Materials & Machinery' }}">
 <meta name="twitter:description" content="{{ $seoDescription ?? 'Advanced materials and machinery solutions.' }}">
 <meta name="twitter:image" content="{{ asset('assets/img/favicon.png') }}">
 

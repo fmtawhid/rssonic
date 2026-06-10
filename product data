@@ -1,0 +1,382 @@
+আপনার অনুরোধ অনুযায়ী সোর্সগুলো থেকে ২০টি প্রোডাক্টের বিস্তারিত তথ্য আপনার দেওয়া ফরম্যাটে নিচে দেওয়া হলো:
+
+### **1. LED Ceramic Spraying Machine**
+```json
+{
+  "product_name": "LED Ceramic Spraying Machine",
+  "category_id": 3, 
+  "product_image": "led_ceramic_spraying.jpg", 
+  "description": "এটি বিভিন্ন শিল্পে LED সিরামিক ল্যাম্প বিড স্প্রে করার প্রক্রিয়াকরণের জন্য উপযুক্ত [৩, ৫]।",
+  "attributes": [
+    {"name": "Model", "value": "CCPTJ [৫]"},
+    {"name": "Maximum Power", "value": "5.5kw [৫]"},
+    {"name": "Input Voltage", "value": "220V [৫]"},
+    {"name": "Weight", "value": "451kg [৫]"}
+  ],
+  "features": [
+    {"feature": "Multi-stage trajectory teach-in programming, intelligent control [৫]"},
+    {"feature": "Self-cleaning system for nozzle and liquid pipeline [৫]"}
+  ]
+}
+```
+
+### **2. Fully Automatic Visual Food Decorating Machine**
+```json
+{
+  "product_name": "Fully Automatic Visual Food Decorating Machine",
+  "category_id": 3, 
+  "product_image": "visual_food_decorating.jpg", 
+  "description": "এটি আঠা, পেইন্ট, চকলেট এবং জ্যামের মতো তরল পদার্থ দিয়ে খাদ্য সাজানোর জন্য একটি উচ্চ প্রযুক্তির মেশিন [৩, ৬]।",
+  "attributes": [
+    {"name": "Power System", "value": "AC220V, 2100W (Max 5400W) [৬]"},
+    {"name": "Visual Positioning", "value": "12 million pixel high-precision camera [৬]"},
+    {"name": "Weight", "value": "980kg [৬]"}
+  ],
+  "features": [
+    {"feature": "360-degree panoramic vision can position and identify the system [৬]"},
+    {"feature": "Win7 (10) 64-bit Chinese/English operating system [৬]"}
+  ]
+}
+```
+
+### **3. 12 Color Dispensing Machine**
+```json
+{
+  "product_name": "12 Color Dispensing Machine",
+  "category_id": 3, 
+  "product_image": "12_color_dispensing.jpg", 
+  "description": "নরম পিভিসি এবং সিলিকন পণ্য যেমন কী-চেইন, স্যুভেনির এবং জুতোর সোল তৈরির জন্য ব্যবহৃত হয় [৩, ১২]।",
+  "attributes": [
+    {"name": "Model", "value": "CCDS-12C [১২]"},
+    {"name": "Power", "value": "1.6kw [১২]"},
+    {"name": "Weight", "value": "260kg [১২]"}
+  ],
+  "features": [
+    {"feature": "12 PCS short-cut key for different Programs [১২]"},
+    {"feature": "Chencai Programmable system, friendly interface & easy to use [১২]"}
+  ]
+}
+```
+
+### **4. Visual Button Gluing Machine**
+```json
+{
+  "product_name": "Visual Button Gluing Machine",
+  "category_id": 3, 
+  "product_image": "visual_button_gluing.jpg", 
+  "description": "এটি সব ধরণের LED পণ্য, পোশাকের এক্সেসরিজ এবং পিভিসি ট্রেডমার্কের সুনির্দিষ্ট আঠা দেওয়ার জন্য ডিজাইন করা হয়েছে [৩, ২৪]।",
+  "attributes": [
+    {"name": "Model", "value": "CCDS-S2 [২৪]"},
+    {"name": "Power", "value": "2.2kw [২৪]"},
+    {"name": "Weight", "value": "800kg [২৪]"}
+  ],
+  "features": [
+    {"feature": "Self-developed fully automatic CCD vision system [২৪]"},
+    {"feature": "Maximum of more than 3,000 products can be dispensed per hour [২৪]"}
+  ]
+}
+```
+
+### **5. Tunnel Production Line**
+```json
+{
+  "product_name": "Tunnel Production Line",
+  "category_id": 3, 
+  "product_image": "tunnel_production_line.jpg", 
+  "description": "তরল প্লাস্টিক পণ্য বেকিং এবং কুলিং করার জন্য একটি সমন্বিত ব্যবস্থা যা উৎপাদন ক্ষমতা বৃদ্ধি করে [৩, ২৫]।",
+  "attributes": [
+    {"name": "Total Loading Power", "value": "40kw [২৫]"},
+    {"name": "Line Speed", "value": "1-4cm/s [২৫]"},
+    {"name": "Weight", "value": "1500kg [২৫]"}
+  ],
+  "features": [
+    {"feature": "Integrate Baking & Cooling Function (Water cooling) [২৫]"},
+    {"feature": "Stable & Even heating temperature control system [২৫]"}
+  ]
+}
+```
+
+### **6. Small PVC Hot Press Molding Machine**
+```json
+{
+  "product_name": "Small PVC Hot Press Molding Machine",
+  "category_id": 3, 
+  "product_image": "small_pvc_hot_press.jpg", 
+  "description": "পিভিসি প্রমোশনাল আইটেম যেমন বার ম্যাট এবং ২ডি/৩ডি কী-চেইন তৈরির মোল্ডিং প্রক্রিয়ার জন্য উপযোগী [৩, ২৭]।",
+  "attributes": [
+    {"name": "Maximum Power", "value": "9740W [২৭]"},
+    {"name": "Pressure", "value": "0.8T [২৭]"},
+    {"name": "Weight", "value": "164kg [২৭]"}
+  ],
+  "features": [
+    {"feature": "Heat & Cold double mold stations for high production capacity [২৭]"},
+    {"feature": "Chencai optimized Precise Temperature heating system [২৭]"}
+  ]
+}
+```
+
+### **7. 35T/50T Vacuum Vulcanizing Machine**
+```json
+{
+  "product_name": "35T/50T Vacuum Vulcanizing Machine",
+  "category_id": 3, 
+  "product_image": "vacuum_vulcanizing.jpg", 
+  "description": "সিলিকন ট্রেডমার্ক, আইপ্যাড কেস এবং কব্জি ব্যান্ডের মতো সিলিকন রাবার পণ্য গরম চাপে তৈরির জন্য ব্যবহৃত হয় [৪, ৩০, ৬০]।",
+  "attributes": [
+    {"name": "Work Pressure", "value": "35T / 50T [৩০]"},
+    {"name": "Total Power", "value": "6.6kw / 13.2kw [৩০]"},
+    {"name": "Weight", "value": "1167kg / 1584kg [৩০]"}
+  ],
+  "features": [
+    {"feature": "Vacuum system able to reduce the air bubbles [৩০]"},
+    {"feature": "Optimized hydraulic circuit system, stable performance guaranteed [৩০]"}
+  ]
+}
+```
+
+### **8. PVC Intelligent Oven**
+```json
+{
+  "product_name": "PVC Intelligent Oven",
+  "category_id": 3, 
+  "product_image": "pvc_intelligent_oven.jpg", 
+  "description": "বিভিন্ন পিভিসি পণ্য গরম করার জন্য এটি ব্যবহৃত হয় এবং এতে স্বয়ংক্রিয়ভাবে মোল্ড বের করে দেওয়ার ব্যবস্থা রয়েছে [৪, ৩৪, ৬১]।",
+  "attributes": [
+    {"name": "Power", "value": "8.2kw / 9.6kw [৩৪]"},
+    {"name": "Input Voltage", "value": "380V/3P/50hz [৩৪]"},
+    {"name": "Weight", "value": "182kg / 204kg [৩৪]"}
+  ],
+  "features": [
+    {"feature": "Heating & cooling 2 in 1 system, Compact structure [৩৪]"},
+    {"feature": "Auto mold push out system, Smart & Flexible [৩৪]"}
+  ]
+}
+```
+
+### **9. Sandblast Machine**
+```json
+{
+  "product_name": "Sandblast Machine",
+  "category_id": 3, 
+  "product_image": "sandblast_machine.jpg", 
+  "description": "ধাতব মোল্ড বা যন্ত্রাংশ থেকে মরিচা অপসারণ এবং সারফেস পলিশ করার জন্য ব্যবহৃত হয় [৪, ৪৩, ৫৯]।",
+  "attributes": [
+    {"name": "Motor Power", "value": "300w [৪৩]"},
+    {"name": "Air Pressure", "value": "0-10kg/cm² [৪৩]"},
+    {"name": "Weight", "value": "113kg [৪৩]"}
+  ],
+  "features": [
+    {"feature": "Automatic Sand return system & Automatic dust & sand separating system [৪৩]"},
+    {"feature": "Simple Structure, easy operation, Super Low Repair Rate [৪৩]"}
+  ]
+}
+```
+
+### **10. Silicone Cutting Machine**
+```json
+{
+  "product_name": "Silicone Cutting Machine",
+  "category_id": 3, 
+  "product_image": "silicone_cutting.jpg", 
+  "description": "এটি শক্ত সিলিকন রাবার সুনির্দিষ্টভাবে কাটার জন্য ডিজাইন করা হয়েছে [৪, ৪৮]।",
+  "attributes": [
+    {"name": "Model", "value": "CC-QL [৪৮]"},
+    {"name": "Cutter Speed", "value": "4000-7000freq/h [৪৮]"},
+    {"name": "Weight", "value": "153kg [৪৮]"}
+  ],
+  "features": [
+    {"feature": "4 Sections loop cutting system, adjustable cutting length [৪৮]"},
+    {"feature": "High cutting precision ensures high production capacity [৪৮]"}
+  ]
+}
+```
+
+### **11. Silicone Rubber Heat Transfer Machine**
+```json
+{
+  "product_name": "Silicone Rubber Heat Transfer Machine",
+  "category_id": 3, 
+  "product_image": "silicone_heat_transfer.jpg", 
+  "description": "পোশাক শিল্পে সিলিকন প্রিন্টিং এবং ২ডি/৩ডি প্যাচ হিট ট্রান্সফার করার জন্য ব্যবহৃত হয় [৪, ৪৯, ৬৫]।",
+  "attributes": [
+    {"name": "Heating Power", "value": "15.2KW [৪৯]"},
+    {"name": "Pressure", "value": "4T [৪৯]"},
+    {"name": "Weight", "value": "632kg [৪৯]"}
+  ],
+  "features": [
+    {"feature": "#45 Milled & Electro plated steel, not easy to get rust [৪৯]"},
+    {"feature": "Smart PID output system, less temperature tolerance [৪৯]"}
+  ]
+}
+```
+
+### **12. Cooling Mold Machine**
+```json
+{
+  "product_name": "Cooling Mold Machine",
+  "category_id": 3, 
+  "product_image": "cooling_mold.jpg", 
+  "description": "ইস্পাত বা অ্যালুমিনিয়ামের মোল্ড দ্রুত ঠান্ডা করার জন্য বিভিন্ন শিল্পে ব্যবহৃত হয় [৪, ৫০, ৬৬]।",
+  "attributes": [
+    {"name": "Maximum Power", "value": "3kw [৫০]"},
+    {"name": "Minimum Temperature", "value": "0°C [৫০]"},
+    {"name": "Weight", "value": "64kg [৫০]"}
+  ],
+  "features": [
+    {"feature": "Mitsubishi PLC system, stable performance [৫০]"},
+    {"feature": "Compact machine body, easy to operate [৫০]"}
+  ]
+}
+```
+
+### **13. UV Curing Light**
+```json
+{
+  "product_name": "UV Curing Light",
+  "category_id": 3, 
+  "product_image": "uv_curing_light.jpg", 
+  "description": "এটি বিভিন্ন তরল প্লাস্টিক উপাদান দ্রুত শুকানোর বা কিউরিং করার জন্য ব্যবহৃত হয় [৪, ৫১]।",
+  "attributes": [
+    {"name": "Heating Power", "value": "400W [৫১]"},
+    {"name": "Wavelength", "value": "365 [৫১]"},
+    {"name": "Weight", "value": "1.1KG [৫১]"}
+  ],
+  "features": [
+    {"feature": "Using imported lamp beads to create, strong heat dissipation [৫১]"},
+    {"feature": "Can be fixed on the drip molding machine to improve efficiency [৫১]"}
+  ]
+}
+```
+
+### **14. Pressure Barrel**
+```json
+{
+  "product_name": "Pressure Barrel",
+  "category_id": 3, 
+  "product_image": "pressure_barrel.jpg", 
+  "description": "তরল প্লাস্টিক বা আঠা সংরক্ষণের জন্য এটি ব্যবহৃত হয় এবং ডিসপেনসিং মেশিনের সাথে কাজ করে [৪, ৫২]।",
+  "attributes": [
+    {"name": "Volume", "value": "15L / 30L [৫২]"},
+    {"name": "Working Pressure", "value": "3-4Bar [৫২]"},
+    {"name": "Weight", "value": "8kg / 22kg [৫২]"}
+  ],
+  "features": [
+    {"feature": "Made by Stainless steel, Anti-rust [৫২]"},
+    {"feature": "Excellent sealing to store liquid plastic/glue [৫২]"}
+  ]
+}
+```
+
+### **15. 7 Inch Rubber Refining Machine**
+```json
+{
+  "product_name": "7 Inch Rubber Refining Machine",
+  "category_id": 3, 
+  "product_image": "7_inch_refining.jpg", 
+  "description": "সলিড সিলিকন রাবারের রঙ মেশানো এবং মিলিং করার কাজে ব্যবহৃত হয় [৪, ৪৪]।",
+  "attributes": [
+    {"name": "Motor Power", "value": "3.75KW [৪৪]"},
+    {"name": "Roller Speed", "value": "15-20r/min [৪৪]"},
+    {"name": "Weight", "value": "565kg [৪৪]"}
+  ],
+  "features": [
+    {"feature": "Adjustable drum rolling speed with emergency stop buttons [৪৪]"},
+    {"feature": "Drum: smooth surface & Non-deformation [৪৪]"}
+  ]
+}
+```
+
+### **16. 9 Inch Rubber Refining Machine**
+```json
+{
+  "product_name": "9 Inch Rubber Refining Machine",
+  "category_id": 3, 
+  "product_image": "9_inch_refining.jpg", 
+  "description": "এটি বড় পরিসরে সলিড সিলিকন রাবারের কালার মিক্সিংয়ের জন্য ব্যবহৃত হয় [৪, ৪৫]।",
+  "attributes": [
+    {"name": "Motor Power", "value": "5.5KW [৪৫]"},
+    {"name": "Roller Speed", "value": "20r/min [৪৫]"},
+    {"name": "Weight", "value": "986kg [৪৫]"}
+  ],
+  "features": [
+    {"feature": "Simple Structure & easy operation [৪৫]"},
+    {"feature": "Several Emergency stop buttons for more safety [৪৫]"}
+  ]
+}
+```
+
+### **17. Mixing Machine**
+```json
+{
+  "product_name": "Mixing Machine",
+  "category_id": 3, 
+  "product_image": "mixing_machine.jpg", 
+  "description": "তরল পিভিসি, সিলিকন বা কালার পেস্ট কার্যকরভাবে মেশানোর জন্য ব্যবহৃত হয় [৪, ৪৭]।",
+  "attributes": [
+    {"name": "Stirring motor power", "value": "3KW [৪৭]"},
+    {"name": "Stirring motor speed", "value": "1430r/min [৪৭]"},
+    {"name": "Weight", "value": "217kg [৪৭]"}
+  ],
+  "features": [
+    {"feature": "With High speed mixing motor & speed Converter [৪৭]"},
+    {"feature": "Stainless steel Mixing blade, more durable & easy to clean [৪৭]"}
+  ]
+}
+```
+
+### **18. Silicone Vacuum Degassing Combination**
+```json
+{
+  "product_name": "Silicone Vacuum Degassing Combination",
+  "category_id": 3, 
+  "product_image": "silicone_vacuum.jpg", 
+  "description": "সিলিকন কাঁচামাল থেকে বুদবুদ অপসারণ করার জন্য এটি ব্যবহৃত হয় [৪, ৩৮, ৬৩]।",
+  "attributes": [
+    {"name": "Power", "value": "200w/220v [৩৮]"},
+    {"name": "Dimensions", "value": "800 × 0.84m × 1600mm [৩৮]"},
+    {"name": "Weight", "value": "65kg [৩৮]"}
+  ],
+  "features": [
+    {"feature": "Adopted international standard Carbon steel, durable & no deformation [৩৮]"},
+    {"feature": "Applied good quality sealing glue for better sealing [৩৮]"}
+  ]
+}
+```
+
+### **19. PVC Vacuum Degassing Combination**
+```json
+{
+  "product_name": "PVC Vacuum Degassing Combination",
+  "category_id": 3, 
+  "product_image": "pvc_vacuum.jpg", 
+  "description": "তরল পিভিসি কাঁচামাল মেশানোর সময় উৎপন্ন বুদবুদ দূর করার জন্য ব্যবহৃত হয় [৪, ৩৯, ৬৪]।",
+  "attributes": [
+    {"name": "Power", "value": "200w/220v [৩৯]"},
+    {"name": "Vacuum pump power", "value": "1500w/380v [৩৯]"},
+    {"name": "Weight", "value": "50kg [৩৯]"}
+  ],
+  "features": [
+    {"feature": "Reasonable design, high mixing efficiency and simpler operation [৩৯]"},
+    {"feature": "Suitable for Liquid PVC raw material mixing [৩৯]"}
+  ]
+}
+```
+
+### **20. Large Capacity PVC Mixer**
+```json
+{
+  "product_name": "Large Capacity PVC Mixer",
+  "category_id": 3, 
+  "product_image": "large_pvc_mixer.jpg", 
+  "description": "এটি বড় পরিমাণে পিভিসি লিকুইড মিক্সিং করার জন্য কাস্টমাইজড মেশিন [৪, ৪৬]।",
+  "attributes": [
+    {"name": "Motor Power", "value": "4KW [৪৬]"},
+    {"name": "Mixing Tank Volume", "value": "1.65T [৪৬]"},
+    {"name": "Weight", "value": "214kg+115kg [৪৬]"}
+  ],
+  "features": [
+    {"feature": "Customized for 1.65T PVC liquid Mixing, adjustable Stirring speed [৪৬]"},
+    {"feature": "Compact edge welding technique, ensure no air/liquid leaking [৪৬]"}
+  ]
+}
+```
